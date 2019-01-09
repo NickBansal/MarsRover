@@ -14,15 +14,33 @@
 }
 
 .LandingPage h1 {
+    font-size: 30px;
     opacity: 0;
     transform: translateX(200px);
     animation: 1 slidein 1s forwards;
     animation-delay: 0.5s
 }
 
+.LandingPage p {
+    margin: 0;
+    opacity: 0;
+    animation: 1 slidein 1s forwards;
+    animation-delay: 1.2s
+}
+
 @keyframes slidein {
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .LandingPage img {
+        height: 250px
+    }
+
+    .LandingPage h1 {
+        font-size: 20px
     }
 }
