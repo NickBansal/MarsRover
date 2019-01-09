@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Stylesheets/App.css';
 import Navbar from './Components/Navbar'
+import { Router } from '@reach/router'
+import LandingPage from './Pages/LandingPage'
 
 class App extends Component {
 
@@ -13,6 +15,9 @@ class App extends Component {
       <div className="App">
         <div className="Stars">
           <Navbar handleKeyPress={this.handleKeyPress}/>
+          <Router>
+            <LandingPage path='/'/>
+          </Router>
         </div>
       </div>
     );

@@ -3,11 +3,20 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    color: white
+    color: white;
+    opacity: 0;
+    animation: 1 slidein 1s forwards;
+    animation-delay: 1s
 }
 
 .NasaLogo {
     height: 80px
+}
+
+@keyframes slidein {
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 600px) {

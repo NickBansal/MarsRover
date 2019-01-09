@@ -1,0 +1,28 @@
+.LandingPage {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.LandingPage img {
+    opacity: 0;
+    height: 300px;
+    transform: translateX(-200px);
+    animation: 1 slidein 1s forwards
+}
+
+.LandingPage h1 {
+    opacity: 0;
+    transform: translateX(200px);
+    animation: 1 slidein 1s forwards;
+    animation-delay: 0.5s
+}
+
+@keyframes slidein {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
