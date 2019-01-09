@@ -2,5 +2,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 80px
+    padding: 20px 40px;
+    color: white
+}
+
+.NasaLogo {
+    height: 80px
+}
+
+@media (max-width: 600px) {
+    .Navbar {
+        flex-direction: column
+    }
+    .NasaLogo {
+        height: 60px;
+        margin-bottom: 20px
+    }
 }
