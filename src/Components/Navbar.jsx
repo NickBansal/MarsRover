@@ -3,11 +3,11 @@ import '../Stylesheets/Navbar.css'
 import NasaSearch from './NasaSearch'
 import NasaLogo from '../Stylesheets/Images/NasaLogo.png'
 
-const Navbar = () => {
+const Navbar = ({ handleKeyPress }) => {
     return (
         <div className="Navbar">
             <img className="NasaLogo" src={NasaLogo} alt="Logo"/>
-            <NasaSearch />
+            <NasaSearch handleKeyPress={handleKeyPress}/>
         </div>
     )
 }

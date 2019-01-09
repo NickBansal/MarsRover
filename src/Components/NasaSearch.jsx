@@ -1,11 +1,16 @@
 import React from 'react'
 import '../Stylesheets/NasaSearch.css'
 
-const NasaSearch = () => {
+const NasaSearch = ({ handleKeyPress }) => {
     return (
         <div className="NasaSearch">
-            <form>
-                <input type="text" name="search" placeholder="Search.." />
+            <form onSubmit={(e) => {
+                handleKeyPress(e.target.value) 
+                e.preventDefault() }}>
+                <input 
+                type="text" 
+                name="search" 
+                placeholder="Search..." />
             </form>
         </div>
     )

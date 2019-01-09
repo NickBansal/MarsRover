@@ -3,11 +3,12 @@ input[type=text] {
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 23px;
   background-color: white;
   background-position: 10px 10px; 
   background-repeat: no-repeat;
-  padding: 12px 20px;
+  padding: 12px 15px;
+  border: 5px solid white;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
   float: right;
@@ -15,12 +16,18 @@ input[type=text] {
   
 input[type=text]:focus {
   width: 400px;
-  border: 2px solid black;
-  outline: none
+  border: 5px solid white;
+  outline: none;
+  -webkit-box-shadow: inset 1px 1px 127px -30px rgba(0,0,0,0.4);
+  -moz-box-shadow: inset 1px 1px 127px -30px rgba(0,0,0,0.4);
+  box-shadow: inset 1px 1px 127px -30px rgba(0,0,0,0.4);
 }
 
 @media (max-width: 600px) {
   input[type=text]:focus {
     width: 350px;
+  }
+  input[type=text] {
+    font-size: 18px
   }
 }
