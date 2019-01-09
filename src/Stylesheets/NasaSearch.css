@@ -13,6 +13,11 @@ input[type=text] {
   transition: width 0.4s ease-in-out;
   float: right;
 }
+
+form {
+  display: flex;
+  align-items: center
+}
   
 input[type=text]:focus {
   width: 400px;
@@ -29,5 +34,8 @@ input[type=text]:focus {
   }
   input[type=text] {
     font-size: 18px
+  }
+  input placeholder {
+    display: none
   }
 }

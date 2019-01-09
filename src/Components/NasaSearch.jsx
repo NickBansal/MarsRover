@@ -5,7 +5,7 @@ const NasaSearch = ({ handleKeyPress }) => {
     return (
         <div className="NasaSearch">
             <form onSubmit={(e) => {
-                handleKeyPress(e.target.value) 
+                handleKeyPress(e.target[0].value) 
                 e.preventDefault() }}>
                 <input 
                 type="text" 

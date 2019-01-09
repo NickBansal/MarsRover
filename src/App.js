@@ -18,8 +18,10 @@ class App extends Component {
     );
   }
 
-  handleKeyPress = (e) => {
-    console.log(e)
+  handleKeyPress = (searchTerm) => {
+    this.setState({
+      searchTerm
+    })
   }
 }
 
