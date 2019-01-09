@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Navbar from '../Components/Navbar'
 import * as api from '../api';
 import '../Stylesheets/SearchPage.css'
+import NotAvailable from '../Stylesheets/Images/not-available.png'
 
 class SearchPage extends Component {
 
@@ -20,7 +21,10 @@ class SearchPage extends Component {
                         <div 
                         className="SingleThumbnail"
                         key={ items.data[0].nasa_id }>
-                            <img src={items.links[0].href} alt={ items.data[0].title }/>
+                            <img 
+                            onError={this.addDefaultSrc} 
+                            src={items.links[0].href} 
+                            alt={ items.data[0].title }/>
                             <p>{ items.data[0].title }</p>
                         </div>
                     )
@@ -33,6 +37,10 @@ class SearchPage extends Component {
         this.setState({
             searchTerm
         })
+    }
+
+    addDefaultSrc = (event) => {
+        event.target.src = `${NotAvailable}`
     }
 
     componentDidUpdate(prevProps, prevState) {
