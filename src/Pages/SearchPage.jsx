@@ -12,10 +12,12 @@ class SearchPage extends Component {
     }
 
     render() {
-        const { searchItems } = this.state
+        const { searchItems, searchTerm } = this.state
         return (
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
+                <div className="AllSearchItems">
+                { searchTerm !== "" && searchItems.length === 0  && <p>Search invalid, Please try again</p> }
                 { searchItems.length > 0 && searchItems.map(items => {
                     return (
                         <div 
@@ -25,10 +27,11 @@ class SearchPage extends Component {
                             onError={this.addDefaultSrc} 
                             src={items.links[0].href} 
                             alt={ items.data[0].title }/>
-                            <p>{ items.data[0].title }</p>
+                            <p>{ items.data[0].title.substring(0, 30) }</p>
                         </div>
                     )
                 }) }
+                </div>
             </div>
         )
     }
@@ -45,15 +48,19 @@ class SearchPage extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevState.searchTerm !== this.state.searchTerm) {
-            api.getPictures(this.state.searchTerm)
+            api.getItems(this.state.searchTerm)
             .then(items => {
                 const searchItems = items.collection.items.filter(data => data.links)
                 this.setState({
-                    searchItems
+                    searchItems,
+                    error: false
                 })
             })
             .catch(error => {
-                console.log(error, "<<<< ERROR")
+                console.log(error)
+                // this.setState({
+                //     error: true
+                // })
             })
         }
     }

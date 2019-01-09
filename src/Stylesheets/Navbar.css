@@ -4,10 +4,18 @@
     align-items: center;
     padding: 20px 40px;
     color: white;
+    opacity: 0;
+    animation: 1 fadein 1s forwards
 }
 
 .NasaLogo {
     height: 80px
+}
+
+@keyframes fadein {
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 600px) {
