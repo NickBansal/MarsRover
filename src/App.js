@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './Stylesheets/App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Nasa - MARS ROVER</h1>
+        <h1>MARS ROVER</h1>
       </div>
     );
   }
