@@ -1,11 +1,12 @@
 .SingleThumbnail {
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
     display: inline-block;
     margin: 10px;
     border: 1px solid white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    vertical-align: top;
 }
 
 .SingleThumbnail:hover {
@@ -15,8 +16,8 @@
 }
 
 .SingleThumbnail img {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border: 5px white solid
@@ -29,4 +30,16 @@
 
 .AllSearchItems {
     padding: 50px;
+    height: 75vh;
+    overflow: scroll;
+}
+
+.Results {
+    font-size: 26px
+}
+
+@media (max-width: 600px) {
+    .AllSearchItems {
+        height: 60vh
+    }
 }

@@ -8,7 +8,8 @@ class SearchPage extends Component {
 
     state = {
         searchTerm: "",
-        searchItems: []
+        searchItems: [],
+        error: null
     }
 
     render() {
@@ -27,11 +28,12 @@ class SearchPage extends Component {
                             onError={this.addDefaultSrc} 
                             src={items.links[0].href} 
                             alt={ items.data[0].title }/>
-                            <p>{ items.data[0].title.substring(0, 30) }</p>
+                            <strong><p>{ items.data[0].title.substring(0, 30) }</p></strong>
                         </div>
                     )
                 }) }
                 </div>
+                { searchItems.length > 0 && <p className="Results">Results: {searchItems.length}</p> }
             </div>
         )
     }
@@ -41,7 +43,7 @@ class SearchPage extends Component {
             searchTerm
         })
     }
-
+    
     addDefaultSrc = (event) => {
         event.target.src = `${NotAvailable}`
     }
@@ -53,14 +55,13 @@ class SearchPage extends Component {
                 const searchItems = items.collection.items.filter(data => data.links)
                 this.setState({
                     searchItems,
-                    error: false
+                    error: null
                 })
             })
             .catch(error => {
-                console.log(error)
-                // this.setState({
-                //     error: true
-                // })
+                this.setState({
+                    error
+                })
             })
         }
     }
