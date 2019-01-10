@@ -16,18 +16,19 @@ class SearchPage extends Component {
     }
 
     render() {
-        const { allItems, searchTerm, start } = this.state
+        const { allItems } = this.state
         return (
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
                 <div className="AllSearchItems">
                 <Router>
                     {allItems.length > 0 && 
-                    <SearchItems path="/" 
-                    searchTerm={searchTerm}
-                    start={start}
+                    <SearchItems 
+                    path="/" 
+                    handleClick={this.handleClick}
                     allItems={allItems} />}
-                    <SingleItem path="/:id" />
+                    <SingleItem 
+                    path="/:id" />
                 </Router>
                 </div>
             </div>

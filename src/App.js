@@ -4,7 +4,6 @@ import { Router } from '@reach/router'
 import LandingPage from './Pages/LandingPage'
 import SearchPage from './Pages/SearchPage'
 import Stars from './Stylesheets/Images/stars.png'
-import SingleItem from './Pages/SingleItem' 
 
 const App = () => {
 
@@ -18,7 +17,6 @@ const App = () => {
         <Router>
           <LandingPage path='/'/>
           <SearchPage path='/search/*'/>
-          <SingleItem path='/asset/:id' />
         </Router>
       </div>
     </div>
