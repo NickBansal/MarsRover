@@ -7,11 +7,25 @@ const addDefaultSrc = (event) => {
     event.target.src = `${NotAvailable}`
 }
 
-const SearchItems = ({ allItems }) => {
+const SearchItems = ({ allItems, handleClick }) => {
     return (
         <div>
-            { allItems.length > 0 && <p className="Results">Results: {allItems.length}</p> } 
-            { allItems.map(items => {
+            {allItems.length > 0 &&
+                <div className="Results">
+                    <form onClick={(e) => handleClick(e.target.value)}>
+                        <div className="RadioSelect">
+                            <input type="radio" name="gender" value="image" /> Image
+                        </div>
+                        <div className="RadioSelect">
+                            <input type="radio" name="gender" value="video" /> Video
+                        </div>
+                        <div className="RadioSelect">
+                            <input type="radio" name="gender" value="audio" /> Audio
+                        </div>
+                    </form>
+                    <p>Results: {allItems.length}</p>
+                </div>}
+            {allItems.map(items => {
                 return (
                     <Link
                         key={items.data[0].nasa_id}

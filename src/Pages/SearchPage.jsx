@@ -63,6 +63,10 @@ class SearchPage extends Component {
         navigate(`/search`)
     }
 
+    handleClick = input => {
+        console.log(input)
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevState.searchTerm !== this.state.searchTerm) {
             api.getItems(this.state.searchTerm)

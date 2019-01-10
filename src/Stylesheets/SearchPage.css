@@ -37,11 +37,15 @@
 }
 
 .Results {
+    display: flex;
+    justify-content: space-between;
     font-size: 26px;
-    background: white;
-    color: #162e4a;
-    margin: 0;
-    padding: 10px;
+    color: white;
+    padding: 7px;
+}
+
+.Results p {
+    margin: 0
 }
 
 a {
@@ -51,6 +55,17 @@ a {
 .EnterSearch, .ErrorMessage, .EmptyMessage {
     opacity: 0;
     animation: 1 fadein 1.5s forwards
+}
+
+.RadioSelect {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.RadioSelect input {
+    margin-right: 5px;
+    font-size: 1rem;
 }
 
 @keyframes fadein {
