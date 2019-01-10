@@ -8,6 +8,13 @@
 .SingleItem img {
     width: 500px;
     height: 500px;
-    border: 5px solid white;
+    border: 5px solid black;
     border-radius: 20px;
+    -webkit-box-shadow: 0px 9px 45px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 45px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 45px 0px rgba(0,0,0,0.75);  
+}
+
+.SingleItem img:hover {
+    cursor: pointer;
 }

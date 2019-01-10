@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as api from '../api';
 import '../Stylesheets/SingleItem.css'
+import Loading from '../Components/Loading'
 
 class SingleItem extends Component {
 
@@ -14,7 +15,7 @@ class SingleItem extends Component {
         const { loading, singleItem } = this.state
         return (
             <div>
-                {loading && <h1>Loading...</h1>}
+                {loading && <Loading /> }
 
                 {!loading &&
                 <div className="SingleItem">
