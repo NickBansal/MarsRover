@@ -44,6 +44,17 @@ a {
     color: white
 }
 
+.EnterSearch, .ErrorMessage, .EmptyMessage {
+    opacity: 0;
+    animation: 1 fadein 1.5s forwards
+}
+
+@keyframes fadein {
+    100% {
+        opacity: 1;
+    }
+}
+
 @media (max-width: 600px) {
     .AllSearchItems {
         height: 60vh

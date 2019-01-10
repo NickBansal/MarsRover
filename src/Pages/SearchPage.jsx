@@ -7,6 +7,8 @@ import SingleItem from '../Pages/SingleItem'
 import { Router, navigate } from '@reach/router'
 import ErrorMessage from '../Components/ErrorMessage'
 import Loading from '../Components/Loading'
+import EmptyMessage from '../Components/EmptyMessage'
+import EnterSearch from '../Components/EnterSearch'
 
 class SearchPage extends Component {
 
@@ -19,12 +21,16 @@ class SearchPage extends Component {
     }
 
     render() {
-        const { allItems, start, loading } = this.state
+        const { allItems, start, loading, searchTerm } = this.state
         return (
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
                 <div className="AllSearchItems">
                 <Router>
+                    {start && <EnterSearch path='/'/>}
+
+                    {!start && !searchTerm && <EmptyMessage path="/"/>}
+
                     {loading && !start && <Loading path='/'/>}
 
                     {allItems.length > 0 && 

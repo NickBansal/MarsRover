@@ -1,9 +1,12 @@
 import React from 'react'
+import '../Stylesheets/SearchPage.css'
 
 const ErrorMessage = () => {
     return (
         <div>
-            <p style={{ fontSize: '20px' }}>No items to display, please search again</p>
+            <p 
+            className="ErrorMessage"
+            style={{ fontSize: '25px' }}>No items to display, please search again</p>
         </div>
     )
 }
