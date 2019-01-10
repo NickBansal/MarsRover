@@ -3,6 +3,8 @@ import Navbar from '../Components/Navbar'
 import * as api from '../api';
 import '../Stylesheets/SearchPage.css'
 import SearchItems from '../Components/SearchItems'
+import SingleItem from '../Pages/SingleItem'
+import { Router } from '@reach/router'
 
 class SearchPage extends Component {
 
@@ -19,8 +21,14 @@ class SearchPage extends Component {
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
                 <div className="AllSearchItems">
-                    {!start && searchTerm !== "" && allItems.length === 0 && <p>Search invalid, Please try again</p>}
-                    {allItems.length > 0 && <SearchItems allItems={allItems} />}
+                <Router>
+                    {allItems.length > 0 && 
+                    <SearchItems path="/" 
+                    searchTerm={searchTerm}
+                    start={start}
+                    allItems={allItems} />}
+                    <SingleItem path="/:id" />
+                </Router>
                 </div>
             </div>
         )

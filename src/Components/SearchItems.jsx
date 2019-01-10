@@ -10,11 +10,12 @@ const addDefaultSrc = (event) => {
 const SearchItems = ({ allItems }) => {
     return (
         <div>
+            {allItems.length > 0 && <p className="Results">Results: {allItems.length}</p>} 
             {allItems.map(items => {
                 return (
                     <Link
                         key={items.data[0].nasa_id}
-                        to={`/asset/${items.data[0].nasa_id}`}>
+                        to={`/search/${items.data[0].nasa_id}`}>
                         <div
                             className="SingleThumbnail">
                             <img
