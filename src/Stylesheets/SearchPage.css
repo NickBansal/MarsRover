@@ -13,7 +13,7 @@
     background: lightgrey;
     color: #162e4a;
     cursor: pointer;
-    filter: grayscale(80%)
+    filter: grayscale(80%);
 }
 
 .SingleThumbnail img {

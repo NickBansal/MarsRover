@@ -17,7 +17,7 @@ const App = () => {
       <div className="Stars" style={style}>
         <Router>
           <LandingPage path='/'/>
-          <SearchPage path='/search'/>
+          <SearchPage path='/search/*'/>
           <SingleItem path='/asset/:id' />
         </Router>
       </div>
