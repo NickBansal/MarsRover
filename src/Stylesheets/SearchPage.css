@@ -26,10 +26,11 @@
 .SingleThumbnail p {
     font-size: 15px;
     margin: 0;
+    padding: 0 10px;
 }
 
 .AllSearchItems {
-    padding: 50px;
+    padding: 0 50px;
     height: 75vh;
     overflow: scroll;
 }
@@ -43,12 +44,12 @@
         height: 60vh
     }
     .SingleThumbnail {
-        width: 150px;
-        height: 170px;
+        width: 170px;
+        height: 210px;
        
     }
     .SingleThumbnail img {
-        height: 130px;
+        height: 170px;
         border: 2px white solid
     }
     .SingleThumbnail p {

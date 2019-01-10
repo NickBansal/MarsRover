@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Navbar from '../Components/Navbar'
 import * as api from '../api';
 import '../Stylesheets/SearchPage.css'
-import NotAvailable from '../Stylesheets/Images/not-available.png'
+import NotAvailable from '../Stylesheets/Images/not-available.png';
+import { Link } from '@reach/router'
 
 class SearchPage extends Component {
 
@@ -22,19 +23,23 @@ class SearchPage extends Component {
                 { !start && searchTerm !== "" && searchItems.length === 0  && <p>Search invalid, Please try again</p> }
                 { searchItems.length > 0 && searchItems.map(items => {
                     return (
+                        <Link 
+                        key={ items.data[0].nasa_id }
+                        to={`/asset/${items.data[0].nasa_id}`}>
                         <div 
-                        className="SingleThumbnail"
-                        key={ items.data[0].nasa_id }>
+                        className="SingleThumbnail">
                             <img 
                             onError={this.addDefaultSrc} 
                             src={items.links[0].href} 
                             alt={ items.data[0].title }/>
                             <strong><p>{ items.data[0].title.substring(0, 30) }</p></strong>
                         </div>
+                        </Link>
                     )
                 }) }
                 </div>
                 { searchItems.length > 0 && <p className="Results">Results: {searchItems.length}</p> }
+
             </div>
         )
     }
