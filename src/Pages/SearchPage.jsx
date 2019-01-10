@@ -14,7 +14,8 @@ class SearchPage extends Component {
         searchTerm: "",
         allItems: [],
         start: true,
-        loading: true
+        loading: true,
+        upper: true
     }
 
     render() {
@@ -45,10 +46,14 @@ class SearchPage extends Component {
     }
 
     handleSubmit = (searchTerm) => {
+        const { upper } = this.state
+        const newSearchTerm = upper ? searchTerm.toLowerCase() : searchTerm.toUpperCase()
         this.setState({
-            searchTerm,
+            searchTerm: newSearchTerm,
             allItems: [], 
-            loading: true
+            loading: true,
+            start: false,
+            upper: !upper
         })
         navigate(`/search`)
     }
@@ -60,7 +65,6 @@ class SearchPage extends Component {
                 const allItems = items.collection.items.filter(data => data.links)
                 this.setState({
                     allItems,
-                    start: false,
                     loading: false
                 })
             })
