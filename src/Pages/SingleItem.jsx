@@ -15,14 +15,22 @@ class SingleItem extends Component {
         const { loading, singleItem } = this.state
         return (
             <div>
-                {loading && <Loading /> }
-
+                {loading && <Loading />}
                 {!loading &&
-                <div className="SingleItem">
-                <h1>{ singleItem.data[0].title }</h1>
-                    <img src={singleItem.links[0].href}
-                        alt={singleItem.data[0].title} />
-                </div> }
+                    <div className="hvrbox">
+                        <img src={singleItem.links[0].href}
+                            alt={singleItem.data[0].title} className="hvrbox-layer_bottom" />
+                        <div className="hvrbox-layer_top hvrbox-layer_scale">
+                            <div className="hvrbox-text">
+                                <h2>React Projects</h2>
+                                <br className="Break" />
+                                <p>I have built a few stand alone projects using ReactJS.
+                    The projects have not been deployed so in order to play you will have to follow the instructions on the readme</p>
+                                <br />
+
+                            </div>
+                        </div>
+                </div>}
             </div>
         )
     }

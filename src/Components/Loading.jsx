@@ -3,9 +3,9 @@ import '../Stylesheets/Loading.scss'
 
 const Loading = () => {
     return (
-        <div class="wrap">
-            <div class="spinner-wrap">
-                <div class="spinner">
+        <div className="wrap">
+            <div className="spinner-wrap">
+                <div className="spinner">
                     <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
                 </div>
             </div>
