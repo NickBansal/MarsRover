@@ -6,22 +6,26 @@ import SearchItems from '../Components/SearchItems'
 import SingleItem from '../Pages/SingleItem'
 import { Router, navigate } from '@reach/router'
 import ErrorMessage from '../Components/ErrorMessage'
+import Loading from '../Components/Loading'
 
 class SearchPage extends Component {
 
     state = {
         searchTerm: "",
         allItems: [],
-        start: true
+        start: true,
+        loading: true
     }
 
     render() {
-        const { allItems, start } = this.state
+        const { allItems, start, loading } = this.state
         return (
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
                 <div className="AllSearchItems">
                 <Router>
+                    {loading && !start && <Loading path='/'/>}
+
                     {allItems.length > 0 && 
                     <SearchItems 
                     path="/" 
@@ -31,7 +35,7 @@ class SearchPage extends Component {
 
                     {allItems.length === 0 && !start &&
                     <ErrorMessage path="/"/>}
-                    
+
                     <SingleItem 
                     path="/:id" />
                 </Router>
@@ -43,7 +47,8 @@ class SearchPage extends Component {
     handleSubmit = (searchTerm) => {
         this.setState({
             searchTerm,
-            allItems: []
+            allItems: [], 
+            loading: true
         })
         navigate(`/search`)
     }
@@ -55,15 +60,11 @@ class SearchPage extends Component {
                 const allItems = items.collection.items.filter(data => data.links)
                 this.setState({
                     allItems,
-                    error: null,
-                    start: false
+                    start: false,
+                    loading: false
                 })
             })
-            .catch(error => {
-                this.setState({
-                    error: true
-                })
-            })
+            .catch(error => console.log(error))
         }
     }
 }
