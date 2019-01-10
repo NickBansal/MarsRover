@@ -9,16 +9,17 @@ class SearchPage extends Component {
     state = {
         searchTerm: "",
         searchItems: [],
-        error: null
+        error: null,
+        start: true
     }
 
     render() {
-        const { searchItems, searchTerm } = this.state
+        const { searchItems, searchTerm, start } = this.state
         return (
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
                 <div className="AllSearchItems">
-                { searchTerm !== "" && searchItems.length === 0  && <p>Search invalid, Please try again</p> }
+                { !start && searchTerm !== "" && searchItems.length === 0  && <p>Search invalid, Please try again</p> }
                 { searchItems.length > 0 && searchItems.map(items => {
                     return (
                         <div 
@@ -55,7 +56,8 @@ class SearchPage extends Component {
                 const searchItems = items.collection.items.filter(data => data.links)
                 this.setState({
                     searchItems,
-                    error: null
+                    error: null,
+                    start: false
                 })
             })
             .catch(error => {

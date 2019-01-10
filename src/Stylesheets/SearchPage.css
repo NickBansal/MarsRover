@@ -42,4 +42,16 @@
     .AllSearchItems {
         height: 60vh
     }
+    .SingleThumbnail {
+        width: 150px;
+        height: 170px;
+       
+    }
+    .SingleThumbnail img {
+        height: 130px;
+        border: 2px white solid
+    }
+    .SingleThumbnail p {
+        font-size: 12px;
+    }
 }
