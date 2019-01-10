@@ -7,7 +7,13 @@ const addDefaultSrc = (event) => {
     event.target.src = `${NotAvailable}`
 }
 
-const SearchItems = ({ allItems, handleClick }) => {
+const SearchItems = ({ allItems, handleClick, input }) => {
+    let allItemsCopy = [...allItems]
+    
+    if (input) {
+        allItemsCopy = allItemsCopy.filter(data => data.data[0].media_type === input)
+    }
+
     return (
         <div>
             {allItems.length > 0 &&
@@ -23,9 +29,9 @@ const SearchItems = ({ allItems, handleClick }) => {
                             <input type="radio" name="gender" value="audio" /> Audio
                         </div>
                     </form>
-                    <p>Results: {allItems.length}</p>
+                    <p>Results: {allItemsCopy.length}</p>
                 </div>}
-            {allItems.map(items => {
+            {allItemsCopy.map(items => {
                 return (
                     <Link
                         key={items.data[0].nasa_id}

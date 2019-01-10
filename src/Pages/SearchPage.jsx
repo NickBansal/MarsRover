@@ -17,11 +17,12 @@ class SearchPage extends Component {
         allItems: [],
         start: true,
         loading: true,
-        upper: true
+        upper: true,
+        input: ""
     }
 
     render() {
-        const { allItems, start, loading, searchTerm } = this.state
+        const { allItems, start, loading, searchTerm, input } = this.state
         return (
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
@@ -37,6 +38,7 @@ class SearchPage extends Component {
                     <SearchItems 
                     path="/" 
                     handleClick={this.handleClick}
+                    input={input}
                     start={start}
                     allItems={allItems} />}
 
@@ -64,7 +66,9 @@ class SearchPage extends Component {
     }
 
     handleClick = input => {
-        console.log(input)
+        this.setState({
+            input
+        })
     }
 
     componentDidUpdate(prevProps, prevState) {

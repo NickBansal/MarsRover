@@ -25,7 +25,7 @@
 }
 
 .SingleThumbnail p {
-    font-size: 15px;
+    font-size: 13px;
     margin: 0;
     padding: 0 10px;
 }
@@ -39,9 +39,9 @@
 .Results {
     display: flex;
     justify-content: space-between;
-    font-size: 26px;
+    font-size: 22px;
     color: white;
-    padding: 7px;
+    padding: 7px 20px;
 }
 
 .Results p {
@@ -80,7 +80,7 @@ a {
     }
     .SingleThumbnail {
         width: 170px;
-        height: 210px;
+        height: 220px;
        
     }
     .SingleThumbnail img {
@@ -89,5 +89,12 @@ a {
     }
     .SingleThumbnail p {
         font-size: 12px;
+    }
+
+    .Results {
+        font-size: 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center
     }
 }
