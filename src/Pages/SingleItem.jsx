@@ -19,8 +19,7 @@ class SingleItem extends Component {
             <div>
                 {loading && <Loading />}
                 {!loading &&
-                    <div>
-                    {/* {console.log(moment(singleItem.data[0].date_created).from())} */}
+                    <div style={{ paddingTop: '40px' }}>
                         <div className="hvrbox">
                             <img 
                             onError={(e) => this.addDefaultSrc(e)}

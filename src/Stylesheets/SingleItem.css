@@ -30,7 +30,16 @@
 .hvrbox .hvrbox-layer_bottom {
     display: block;
     border-radius: 20px;
+    opacity: 0;
+    animation: 1 fadein 1.5s forwards
 }
+
+@keyframes fadein {
+    100% {
+        opacity: 1;
+    }
+}
+
 .hvrbox .hvrbox-layer_top {
 	opacity: 0;
     position: absolute;
