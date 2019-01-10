@@ -7,10 +7,9 @@ const addDefaultSrc = (event) => {
     event.target.src = `${NotAvailable}`
 }
 
-const SearchItems = ({ allItems, start }) => {
+const SearchItems = ({ allItems }) => {
     return (
         <div>
-            { start &&  <p>No items to display, please search again</p> }
             { allItems.length > 0 && <p className="Results">Results: {allItems.length}</p> } 
             { allItems.map(items => {
                 return (
@@ -23,7 +22,7 @@ const SearchItems = ({ allItems, start }) => {
                                 onError={addDefaultSrc}
                                 src={items.links[0].href}
                                 alt={items.data[0].title} />
-                            <strong><p>{items.data[0].title.substring(0, 30)}</p></strong>
+                            <strong><p>{items.data[0].title.substring(0, 40)}</p></strong>
                         </div>
                     </Link>
                 )

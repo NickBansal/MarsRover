@@ -5,10 +5,10 @@ import '../Stylesheets/SearchPage.css'
 import SearchItems from '../Components/SearchItems'
 import SingleItem from '../Pages/SingleItem'
 import { Router, navigate } from '@reach/router'
-import ErrorMessage from '../Components/ErrorMessage'
+import ErrorMessage from '../Error/ErrorMessage'
 import Loading from '../Components/Loading'
-import EmptyMessage from '../Components/EmptyMessage'
-import EnterSearch from '../Components/EnterSearch'
+import EmptyMessage from '../Error/EmptyMessage'
+import EnterSearch from '../Error/EnterSearch'
 
 class SearchPage extends Component {
 
@@ -43,8 +43,7 @@ class SearchPage extends Component {
                     {allItems.length === 0 && !start &&
                     <ErrorMessage path="/"/>}
 
-                    <SingleItem 
-                    path="/:id" />
+                    <SingleItem path="/:id" />
                 </Router>
                 </div>
             </div>

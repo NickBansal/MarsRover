@@ -37,7 +37,11 @@
 }
 
 .Results {
-    font-size: 26px
+    font-size: 26px;
+    background: white;
+    color: #162e4a;
+    margin: 0;
+    padding: 10px;
 }
 
 a {
