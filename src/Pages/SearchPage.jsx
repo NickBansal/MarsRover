@@ -4,7 +4,7 @@ import * as api from '../api';
 import '../Stylesheets/SearchPage.css'
 import SearchItems from '../Components/SearchItems'
 import SingleItem from '../Pages/SingleItem'
-import { Router } from '@reach/router'
+import { Router, navigate } from '@reach/router'
 
 class SearchPage extends Component {
 
@@ -36,8 +36,10 @@ class SearchPage extends Component {
 
     handleSubmit = (searchTerm) => {
         this.setState({
-            searchTerm
+            searchTerm,
+            allItems: []
         })
+        navigate(`/search`)
     }
 
     componentDidUpdate(prevProps, prevState) {
