@@ -5,18 +5,18 @@ import '../Stylesheets/SearchPage.css'
 import SearchItems from '../Components/SearchItems'
 import SingleItem from '../Pages/SingleItem'
 import { Router, navigate } from '@reach/router'
+import ErrorMessage from '../Components/ErrorMessage'
 
 class SearchPage extends Component {
 
     state = {
         searchTerm: "",
         allItems: [],
-        error: null,
         start: true
     }
 
     render() {
-        const { allItems } = this.state
+        const { allItems, start } = this.state
         return (
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
@@ -26,7 +26,12 @@ class SearchPage extends Component {
                     <SearchItems 
                     path="/" 
                     handleClick={this.handleClick}
+                    start={start}
                     allItems={allItems} />}
+
+                    {allItems.length === 0 && !start &&
+                    <ErrorMessage path="/"/>}
+                    
                     <SingleItem 
                     path="/:id" />
                 </Router>
@@ -56,7 +61,7 @@ class SearchPage extends Component {
             })
             .catch(error => {
                 this.setState({
-                    error
+                    error: true
                 })
             })
         }

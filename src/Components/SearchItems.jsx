@@ -7,11 +7,12 @@ const addDefaultSrc = (event) => {
     event.target.src = `${NotAvailable}`
 }
 
-const SearchItems = ({ allItems }) => {
+const SearchItems = ({ allItems, start }) => {
     return (
         <div>
-            {allItems.length > 0 && <p className="Results">Results: {allItems.length}</p>} 
-            {allItems.map(items => {
+            { start &&  <p>No items to display, please search again</p> }
+            { allItems.length > 0 && <p className="Results">Results: {allItems.length}</p> } 
+            { allItems.map(items => {
                 return (
                     <Link
                         key={items.data[0].nasa_id}

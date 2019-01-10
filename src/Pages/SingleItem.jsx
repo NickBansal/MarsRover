@@ -29,8 +29,8 @@ class SingleItem extends Component {
                             <div className="hvrbox-layer_top hvrbox-layer_scale">
                                 <div className="hvrbox-text">
                                     <h1>{singleItem.data[0].title}</h1>
-                                    <p>{singleItem.data[0].description}</p>
-                                    <p>Created: { moment(singleItem.data[0].date_created).from() }</p>
+                                    <p className="Description">{singleItem.data[0].description}</p>
+                                    <p className="Created">Created: { moment(singleItem.data[0].date_created).from() }</p>
                                 </div>
                             </div>
                             <p>Please hover over the image for more detail</p>

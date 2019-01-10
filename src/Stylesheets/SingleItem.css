@@ -97,12 +97,16 @@
 }
 
 .hvrbox-text h1 {
-    font-size: 40px;
+    font-size: 35px;
     margin: 0
 }
 
-.hvrbox-text p {
-	font-size: 25px
+.hvrbox-text p.Description {
+	font-size: 20px
+}
+
+.hvrbox-text p.Created {
+	font-size: 15px
 }
 
 @media (max-width: 650px) {
@@ -117,7 +121,10 @@
 	.hvrbox-text h1 {
 		font-size: 20px;
 	}
-	.hvrbox-text p {
+	.hvrbox-text p.Description {
 		font-size: 15px
+	}
+	.hvrbox-text p.Created {
+		font-size: 13px
 	}
 }
