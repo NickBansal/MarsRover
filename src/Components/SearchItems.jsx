@@ -8,11 +8,7 @@ const addDefaultSrc = (event) => {
 }
 
 const SearchItems = ({ allItems, handleClick, input }) => {
-    let allItemsCopy = [...allItems]
-    
-    if (input) {
-        allItemsCopy = allItemsCopy.filter(data => data.data[0].media_type === input)
-    }
+    let allItemsCopy = allItems.filter(data => data.data[0].media_type === input)
 
     return (
         <div>
@@ -20,7 +16,7 @@ const SearchItems = ({ allItems, handleClick, input }) => {
                 <div className="Results">
                     <form onClick={(e) => handleClick(e.target.value)}>
                         <div className="RadioSelect">
-                            <input type="radio" name="gender" value="image" /> Image
+                            <input type="radio" name="gender" value="image" defaultChecked/> Image
                         </div>
                         <div className="RadioSelect">
                             <input type="radio" name="gender" value="video" /> Video

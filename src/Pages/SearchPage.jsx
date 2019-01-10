@@ -18,7 +18,7 @@ class SearchPage extends Component {
         start: true,
         loading: true,
         upper: true,
-        input: ""
+        input: "image"
     }
 
     render() {
@@ -54,7 +54,7 @@ class SearchPage extends Component {
 
     handleSubmit = (searchTerm) => {
         const { upper } = this.state
-        const newSearchTerm = upper ? searchTerm.toLowerCase() : searchTerm.toUpperCase()
+        const newSearchTerm = upper ? searchTerm.toLowerCase().trim() : searchTerm.toUpperCase().trim()
         this.setState({
             searchTerm: newSearchTerm,
             allItems: [], 
