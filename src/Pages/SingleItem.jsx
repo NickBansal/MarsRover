@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import * as api from '../api';
 import '../Stylesheets/SingleItem.css'
 import Loading from '../Components/Loading'
+import NotAvailable from '../Stylesheets/Images/not-available.png';
+import moment from 'moment'
 
 class SingleItem extends Component {
 
@@ -17,23 +19,33 @@ class SingleItem extends Component {
             <div>
                 {loading && <Loading />}
                 {!loading &&
-                    <div className="hvrbox">
-                        <img src={singleItem.links[0].href}
-                            alt={singleItem.data[0].title} className="hvrbox-layer_bottom" />
-                        <div className="hvrbox-layer_top hvrbox-layer_scale">
-                            <div className="hvrbox-text">
-                                <h2>React Projects</h2>
-                                <br className="Break" />
-                                <p>I have built a few stand alone projects using ReactJS.
-                    The projects have not been deployed so in order to play you will have to follow the instructions on the readme</p>
-                                <br />
-
+                    <div>
+                    {/* {console.log(moment(singleItem.data[0].date_created).from())} */}
+                        <div className="hvrbox">
+                            <img 
+                            onError={(e) => this.addDefaultSrc(e)}
+                            src={singleItem.links[0].href}
+                            alt={singleItem.data[0].title} 
+                            className="hvrbox-layer_bottom" />
+                            <div className="hvrbox-layer_top hvrbox-layer_scale">
+                                <div className="hvrbox-text">
+                                    <h1>{singleItem.data[0].title}</h1>
+                                    <p style={{ fontSize: '25px'}}>{singleItem.data[0].description}</p>
+                                    <p style={{ fontSize: '20px'}}>Created: { moment(singleItem.data[0].date_created).from() }</p>
+                                </div>
                             </div>
+                            <p>Please hover over the image for more detail</p>
                         </div>
-                </div>}
+                    </div>
+                }
             </div>
         )
     }
+
+    addDefaultSrc = (event) => {
+        event.target.src = `${NotAvailable}`
+    }
+
     componentDidMount() {
         api.getItems(this.props.id)
             .then(data => {
