@@ -1,17 +1,32 @@
 .SingleThumbnail {
     width: 150px;
-    height: 250px;
+    height: 200px;
     display: inline-block;
-    margin: 10px
+    margin: 10px;
+    border: 1px solid white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.SingleThumbnail:hover {
+    background: lightgrey;
+    color: #162e4a;
+    cursor: pointer;
 }
 
 .SingleThumbnail img {
     height: 150px;
     width: 150px;
-    border-radius: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     border: 5px white solid
 }
 
+.SingleThumbnail p {
+    font-size: 15px;
+    margin: 0;
+}
+
 .AllSearchItems {
-    padding: 50px
+    padding: 50px;
 }
