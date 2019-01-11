@@ -55,7 +55,8 @@ a {
 
 .EnterSearch, .ErrorMessage, .EmptyMessage {
     opacity: 0;
-    animation: 1 fadein 1.5s forwards
+    animation: 1 fadein 1.5s forwards;
+    font-size: 25px
 }
 
 .RadioSelect {
@@ -76,9 +77,6 @@ a {
 }
 
 @media (max-width: 700px) {
-    .AllSearchItems {
-        height: 60vh
-    }
     .SingleThumbnail {
         width: 170px;
         height: 220px;
@@ -90,14 +88,15 @@ a {
     .SingleThumbnail p {
         font-size: 12px;
     }
-
+    p.EnterSearch, p.ErrorMessage, p.EmptyMessage {
+        font-size: 20px
+    }
     .Results {
         font-size: 17px;
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center
     }
-
     .Results p {
         margin-bottom: 5px;
     }
