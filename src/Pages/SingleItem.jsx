@@ -8,7 +8,7 @@ import moment from 'moment'
 class SingleItem extends Component {
 
     state = {
-        singleItem: {},
+        singleItem: [],
         error: false,
         loading: true,
         assets: []
@@ -19,32 +19,33 @@ class SingleItem extends Component {
         return (
             <div>
                 {loading && <Loading />}
-                {!loading &&
+                {!loading && singleItem.length === 0 && <p>There was a problem loading, please try again</p>}
+                {!loading && singleItem.length > 0 &&
                     <div style={{ paddingTop: '40px' }}>
-                        {singleItem.data[0].media_type === 'image' && <div className="hvrbox">
+                        {singleItem[0].data[0].media_type === 'image' && <div className="hvrbox">
                             <img
                                 onError={(e) => this.addDefaultSrc(e)}
-                                src={singleItem.links[0].href}
-                                alt={singleItem.data[0].title}
+                                src={singleItem[0].links[0].href}
+                                alt={singleItem[0].data[0].title}
                                 className="hvrbox-layer_bottom" />
                             <div className="hvrbox-layer_top hvrbox-layer_scale">
                                 <div className="hvrbox-text">
-                                    <h1>{singleItem.data[0].title}</h1>
-                                    <p className="Description">{singleItem.data[0].description}</p>
-                                    <p className="Created">Created: {moment(singleItem.data[0].date_created).from()}</p>
+                                    <h1>{singleItem[0].data[0].title}</h1>
+                                    <p className="Description">{singleItem[0].data[0].description}</p>
+                                    <p className="Created">Created: {moment(singleItem[0].data[0].date_created).from()}</p>
                                 </div>
                             </div>
                             <p>Please hover over the image for more detail</p>
                         </div>}
-                        {singleItem.data[0].media_type === 'video' &&
+                        {singleItem[0].data[0].media_type === 'video' &&
                             <div className="VideoPlayback">
                                 <video width="550" height="550" controls>
                                     <source src={assets[0].href} type="video/mp4" />
                                     <source src={assets[1].href} type="video/mp4" />
                                 </video>
-                                <h1>{singleItem.data[0].title}</h1>
-                                <p className="Description">{singleItem.data[0].description}</p>
-                                <p className="Created">Created: {moment(singleItem.data[0].date_created).from()}</p>
+                                <h1>{singleItem[0].data[0].title}</h1>
+                                <p className="Description">{singleItem[0].data[0].description}</p>
+                                <p className="Created">Created: {moment(singleItem[0].data[0].date_created).from()}</p>
                             </div>
                         }
                     </div>
@@ -63,7 +64,7 @@ class SingleItem extends Component {
         Promise.all([getItems, getAssets])
             .then(data => {
                 this.setState({
-                    singleItem: data[0].collection.items[0],
+                    singleItem: data[0].collection.items,
                     loading: false,
                     assets: data[1].collection.items
                 })
