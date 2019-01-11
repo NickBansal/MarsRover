@@ -15,7 +15,7 @@ class SingleItem extends Component {
     }
 
     render() {
-        const { loading, singleItem } = this.state
+        const { loading, singleItem, assets } = this.state
         return (
             <div>
                 {loading && <Loading />}
@@ -36,35 +36,38 @@ class SingleItem extends Component {
                             </div>
                             <p>Please hover over the image for more detail</p>
                         </div>}
-                        {singleItem.data[0].media_type === 'video' && <h1>VIDEO</h1>}
+                        {singleItem.data[0].media_type === 'video' &&
+                        <video width="550" height="550" controls>
+                            <source src={assets[0].href} type="video/mp4" />
+                            <source src={assets[1].href} type="video/mp4" />
+                        </video>}
                     </div>
-                }
+                                }
             </div>
         )
-    }
-
+                        }
+                    
     addDefaultSrc = (event) => {
-        event.target.src = `${NotAvailable}`
-    }
+                            event.target.src = `${NotAvailable}`
+                        }
 
-    componentDidMount() {
+                        componentDidMount() {
         const getItems = api.getItems(this.props.id)
-        const getAssets = api.assetData(this.props.id)
-
-        Promise.all([getItems, getAssets])
-            .then(data => {
-                this.setState({
-                    singleItem: data[0].collection.items[0],
-                    loading: false,
-                    assets: data[1].collection.items
-                })
-            })
-            .catch(error => {
-                this.setState({
-                    error: true
-                })
-            })
-    }
-}
-
+                        const getAssets = api.assetData(this.props.id)
+                        Promise.all([getItems, getAssets])
+        .then(data => {
+                            this.setState({
+                                singleItem: data[0].collection.items[0],
+                                loading: false,
+                                assets: data[1].collection.items
+                            })
+                        })
+        .catch(error => {
+                            this.setState({
+                                error: true
+                            })
+                        })
+                    }
+                }
+                
 export default SingleItem
