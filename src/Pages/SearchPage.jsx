@@ -54,9 +54,9 @@ class SearchPage extends Component {
 
     handleSubmit = (searchTerm) => {
         const { upper } = this.state
-        const newSearchTerm = upper ? searchTerm.toLowerCase().trim() : searchTerm.toUpperCase().trim()
+        const newSearchTerm = upper ? searchTerm.toLowerCase() : searchTerm.toUpperCase()
         this.setState({
-            searchTerm: newSearchTerm,
+            searchTerm: newSearchTerm.trim(),
             allItems: [], 
             loading: true,
             start: false,

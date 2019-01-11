@@ -7,7 +7,7 @@ const NasaSearch = ({ handleSubmit }) => {
             <form onSubmit={(e) => {
                 handleSubmit(e.target[0].value) 
                 e.preventDefault() 
-                e.target[0].value = ""
+                // e.target[0].value = ""
                 }}>
                 <input 
                 type="text" 

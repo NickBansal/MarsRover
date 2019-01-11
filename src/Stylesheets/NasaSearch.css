@@ -38,4 +38,7 @@ input[type=text]:focus {
   input placeholder {
     display: none
   }
+  input[type=text] {
+    padding: 8px
+  }
 }
