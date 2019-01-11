@@ -3,6 +3,7 @@ import * as api from '../api';
 import '../Stylesheets/SingleItem.css'
 import Loading from '../Components/Loading'
 import moment from 'moment'
+import { navigate } from '@reach/router'
 
 class SingleItem extends Component {
 
@@ -20,10 +21,19 @@ class SingleItem extends Component {
                 {!error && loading && <Loading />}
 
                 {!loading && singleItem.length === 0 &&
-                    <p className="ErrorLoad">There was a problem retreiving the information, please try another search</p>}
+                    <div>
+                        <p className="ErrorLoad">There was a problem retreiving the information, please try another search</p>
+                        <button onClick={() => navigate('/search')}>BACK</button>
+                    </div>
+                    }
 
                 {error && 
-                <p className="ErrorLoad">Loading failed, please try another search</p>}
+                <div>
+                <p className="ErrorLoad">Loading failed, please try another search</p>
+                <button onClick={() => navigate('/search')}>BACK</button>
+            </div>
+                
+                }
 
                 {!loading && singleItem.length > 0 &&
                     <div style={{ paddingTop: '40px' }}>
