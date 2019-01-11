@@ -116,6 +116,11 @@ video {
     border: 3px solid white;
 }
 
+.VideoPlayback {
+	opacity: 0;
+	animation: 1 fadein 1s forwards
+}
+
 .VideoPlayback p {
 	width: 60%;
 	margin: 15px auto

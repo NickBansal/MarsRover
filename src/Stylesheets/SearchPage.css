@@ -88,9 +88,6 @@ a {
     .SingleThumbnail p {
         font-size: 13px;
     }
-    p.EnterSearch, p.ErrorMessage, p.EmptyMessage {
-        font-size: 20px
-    }
     .Results {
         font-size: 17px;
         flex-direction: column-reverse;
@@ -99,6 +96,12 @@ a {
     }
     .Results p {
         margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    p.EnterSearch, p.ErrorMessage, p.EmptyMessage {
+        font-size: 20px
     }
 }
 
