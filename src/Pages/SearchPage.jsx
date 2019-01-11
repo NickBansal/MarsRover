@@ -60,7 +60,8 @@ class SearchPage extends Component {
             allItems: [], 
             loading: true,
             start: false,
-            upper: !upper
+            upper: !upper,
+            input: "image"
         })
         navigate(`/search`)
     }

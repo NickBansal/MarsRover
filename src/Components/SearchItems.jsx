@@ -38,7 +38,9 @@ const SearchItems = ({ allItems, handleClick, input }) => {
                                 onError={addDefaultSrc}
                                 src={items.links[0].href}
                                 alt={items.data[0].title} />
-                            <strong><p>{items.data[0].title.substring(0, 40)}</p></strong>
+                            <strong>
+                                <p>{items.data[0].title.substring(0, 40).replace(new RegExp("\\-","g"),' ')}</p>
+                            </strong>
                         </div>
                     </Link>
                 )
