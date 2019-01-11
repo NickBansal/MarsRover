@@ -1,4 +1,4 @@
-import './setupTest';
+import '../setupTest';
 import React from 'react';
 import LandingPage from '../Pages/LandingPage';
 import { shallow } from 'enzyme';
