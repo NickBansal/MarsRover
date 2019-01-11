@@ -1,10 +1,10 @@
 import React from 'react'
 import '../Stylesheets/SearchPage.css'
 import { Link } from '@reach/router'
-import NotAvailable from '../Stylesheets/Images/not-available.png';
+import NasaLogo from '../Stylesheets/Images/NasaLogo.png';
 
 const addDefaultSrc = (event) => {
-    event.target.src = `${NotAvailable}`
+    event.target.src = `${NasaLogo}`
 }
 
 const SearchItems = ({ allItems, handleClick, input }) => {

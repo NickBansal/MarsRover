@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import * as api from '../api';
 import '../Stylesheets/SingleItem.css'
 import Loading from '../Components/Loading'
-import NotAvailable from '../Stylesheets/Images/not-available.png';
 import moment from 'moment'
 
 class SingleItem extends Component {
@@ -19,12 +18,13 @@ class SingleItem extends Component {
         return (
             <div>
                 {loading && <Loading />}
-                {!loading && singleItem.length === 0 && <p>There was a problem loading, please try again</p>}
+                {!loading && singleItem.length === 0 &&
+                    <p className="ErrorLoad">This item will not load, try another search</p>}
+
                 {!loading && singleItem.length > 0 &&
                     <div style={{ paddingTop: '40px' }}>
                         {singleItem[0].data[0].media_type === 'image' && <div className="hvrbox">
                             <img
-                                onError={(e) => this.addDefaultSrc(e)}
                                 src={singleItem[0].links[0].href}
                                 alt={singleItem[0].data[0].title}
                                 className="hvrbox-layer_bottom" />
@@ -43,8 +43,8 @@ class SingleItem extends Component {
                                     <source src={assets[0].href} type="video/mp4" />
                                     <source src={assets[1].href} type="video/mp4" />
                                 </video>
-                                <h1>{singleItem[0].data[0].title}</h1>
-                                <p className="Description">{singleItem[0].data[0].description}</p>
+                                <h1>{singleItem[0].data[0].title.replace(new RegExp("\\-|_","g"),' ')}</h1>
+                                <p className="Description">{singleItem[0].data[0].description.replace(new RegExp("\\-|_","g"),' ')}</p>
                                 <p className="Created">Created: {moment(singleItem[0].data[0].date_created).from()}</p>
                             </div>
                         }
@@ -52,10 +52,6 @@ class SingleItem extends Component {
                 }
             </div>
         )
-    }
-
-    addDefaultSrc = (event) => {
-        event.target.src = `${NotAvailable}`
     }
 
     componentDidMount() {

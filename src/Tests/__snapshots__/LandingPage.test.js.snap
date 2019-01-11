@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LandingPage /> Component matches the snapshot 1`] = `
+<div
+  className="LandingPage"
+>
+  <ForwardRef
+    to="/search"
+  >
+    <img
+      alt="Nasa logo"
+      src="NasaLogo.png"
+    />
+  </ForwardRef>
+  <h1>
+    Nasa Image Search Page
+  </h1>
+  <p>
+    Please click the picture to start your search
+  </p>
+</div>
+`;
