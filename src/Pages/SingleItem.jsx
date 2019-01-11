@@ -18,8 +18,9 @@ class SingleItem extends Component {
         return (
             <div>
                 {loading && <Loading />}
+
                 {!loading && singleItem.length === 0 &&
-                    <p className="ErrorLoad">This item will not load, try another search</p>}
+                    <p className="ErrorLoad">There was a problem with loading, please try another search</p>}
 
                 {!loading && singleItem.length > 0 &&
                     <div style={{ paddingTop: '40px' }}>
@@ -67,7 +68,7 @@ class SingleItem extends Component {
             })
             .catch(error => {
                 this.setState({
-                    error: true
+                    error
                 })
             })
     }
