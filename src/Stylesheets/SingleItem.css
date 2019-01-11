@@ -109,7 +109,23 @@
 	font-size: 15px
 }
 
-@media (max-width: 650px) {
+video {
+	height: 350px;
+	width: 550px
+}
+
+.VideoPlayback p {
+	width: 60%;
+	margin: 10px auto
+}
+
+@media (max-width: 850px) {
+	.VideoPlayback p {
+		width: 80%;
+	}
+}
+
+@media (max-width: 600px) {
 	.hvrbox .hvrbox-layer_top {
 		height: 300px;
 		width: 300px;
@@ -126,5 +142,16 @@
 	}
 	.hvrbox-text p.Created {
 		font-size: 13px
+	}
+	video {
+		height: 190px;
+		width: 300px
+	}
+	.VideoPlayback p {
+		width: 100%;
+		font-size: 15px
+	}
+	.VideoPlayback h1 {
+		font-size: 25px
 	}
 }
