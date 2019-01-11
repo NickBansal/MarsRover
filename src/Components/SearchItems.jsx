@@ -9,15 +9,15 @@ const addDefaultSrc = (event) => {
 
 const SearchItems = ({ allItems, handleClick, input }) => {
     let allItemsCopy = allItems.filter(data => data.data[0].media_type === input)
-    const filterMessage = input === 'video' ? 'There are no videos' : 
-    input === 'audio' ? 'There is no audio' : 'There are no images'
+    const filterMessage = input === 'video' ? 'There are no videos' :
+        input === 'audio' ? 'There is no audio' : 'There are no images'
     return (
         <div>
             {allItems.length > 0 &&
                 <div className="Results">
                     <form onClick={(e) => handleClick(e.target.value)}>
                         <div className="RadioSelect">
-                            <input type="radio" name="gender" value="image" defaultChecked/> Image
+                            <input type="radio" name="gender" value="image" defaultChecked /> Image
                         </div>
                         <div className="RadioSelect">
                             <input type="radio" name="gender" value="video" /> Video
@@ -42,9 +42,11 @@ const SearchItems = ({ allItems, handleClick, input }) => {
                                 onError={addDefaultSrc}
                                 src={items.links[0].href}
                                 alt={items.data[0].title} />
-                            <strong>
-                                <p>{items.data[0].title.substring(0, 40).replace(new RegExp("\\-|_","g"),' ')}</p>
-                            </strong>
+                            <div className="SingleThumbnailTitle">
+                                <strong>
+                                    <p>{items.data[0].title.substring(0, 40).replace(new RegExp("\\-|_", "g"), ' ')}</p>
+                                </strong>
+                            </div>
                         </div>
                     </Link>
                 )
