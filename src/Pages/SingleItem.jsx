@@ -14,13 +14,16 @@ class SingleItem extends Component {
     }
 
     render() {
-        const { loading, singleItem, assets } = this.state
+        const { loading, singleItem, assets, error } = this.state
         return (
             <div>
-                {loading && <Loading />}
+                {!error && loading && <Loading />}
 
                 {!loading && singleItem.length === 0 &&
-                    <p className="ErrorLoad">There was a problem with loading, please try another search</p>}
+                    <p className="ErrorLoad">There was a problem retreiving the information, please try another search</p>}
+
+                {error && 
+                <p className="ErrorLoad">Loading failed, please try another search</p>}
 
                 {!loading && singleItem.length > 0 &&
                     <div style={{ paddingTop: '40px' }}>
