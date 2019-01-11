@@ -9,7 +9,8 @@ const addDefaultSrc = (event) => {
 
 const SearchItems = ({ allItems, handleClick, input }) => {
     let allItemsCopy = allItems.filter(data => data.data[0].media_type === input)
-    const filterMessage = input === 'video' ? 'There are no videos' : 'There is no audio'
+    const filterMessage = input === 'video' ? 'There are no videos' : 
+    input === 'audio' ? 'There is no audio' : 'There are no images'
     return (
         <div>
             {allItems.length > 0 &&
@@ -28,8 +29,8 @@ const SearchItems = ({ allItems, handleClick, input }) => {
                     <p>Results: {allItemsCopy.length}</p>
                 </div>}
 
-            {allItemsCopy.length === 0 && <p>{filterMessage} available for this search</p>}
-            
+            {allItemsCopy.length === 0 && <p className='EnterSearch'>{filterMessage} available for this search</p>}
+
             {allItemsCopy.map(items => {
                 return (
                     <Link
