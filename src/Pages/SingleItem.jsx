@@ -23,14 +23,14 @@ class SingleItem extends Component {
                 {!loading && singleItem.length === 0 &&
                     <div>
                         <p className="ErrorLoad">There was a problem retreiving the information, please try another search</p>
-                        <button onClick={() => navigate('/search')}>BACK</button>
+                        <button onClick={() => navigate('/search')}><i class="fas fa-chevron-circle-left fa-5x"></i></button>
                     </div>
                     }
 
                 {error && 
                 <div>
                 <p className="ErrorLoad">Loading failed, please try another search</p>
-                <button onClick={() => navigate('/search')}>BACK</button>
+                <button onClick={() => navigate('/search')}><i class="fas fa-chevron-circle-left fa-5x"></i></button>
             </div>
                 
                 }

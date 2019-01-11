@@ -117,6 +117,24 @@ video {
 	background: #0000005e
 }
 
+.fa-chevron-circle-left {
+	color: white;
+	transition: 0.3s
+}
+
+.fa-chevron-circle-left:hover {
+	cursor: pointer;
+	transform: translateY(-2px);
+	color: lightgray;
+	transition: 0.3s
+}
+
+button {
+	background: none;
+	outline: none;
+	border: none
+}
+
 .VideoPlayback {
 	opacity: 0;
 	animation: 1 fadein 1s forwards
