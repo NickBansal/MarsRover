@@ -1,6 +1,6 @@
 .SingleThumbnail {
     width: 200px;
-    height: 250px;
+    height: 261px;
     display: inline-block;
     margin: 10px;
     border: 1px solid white;
@@ -33,7 +33,7 @@
 
 .AllSearchItems {
     padding: 0 50px;
-    height: 75vh;
+    height: 80vh;
     overflow: scroll;
 }
 

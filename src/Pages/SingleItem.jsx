@@ -23,14 +23,14 @@ class SingleItem extends Component {
                 {!loading && singleItem.length === 0 &&
                     <div>
                         <p className="ErrorLoad">There was a problem retreiving the information, please try another search</p>
-                        <button onClick={() => navigate('/search')}><i class="fas fa-chevron-circle-left fa-5x"></i></button>
+                        <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-5x"></i></button>
                     </div>
                     }
 
                 {error && 
                 <div>
                 <p className="ErrorLoad">Loading failed, please try another search</p>
-                <button onClick={() => navigate('/search')}><i class="fas fa-chevron-circle-left fa-5x"></i></button>
+                <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-5x"></i></button>
             </div>
                 
                 }
@@ -50,6 +50,7 @@ class SingleItem extends Component {
                                 </div>
                             </div>
                             <p>Please hover over the image for more detail</p>
+                            <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
                         </div>}
                         {singleItem[0].data[0].media_type === 'video' &&
                             <div className="VideoPlayback">
@@ -60,6 +61,7 @@ class SingleItem extends Component {
                                 <h1>{singleItem[0].data[0].title.replace(new RegExp("\\-|_","g"),' ')}</h1>
                                 <p className="Description">{singleItem[0].data[0].description.replace(new RegExp("\\-|_","g"),' ')}</p>
                                 <p className="Created">Created: {moment(singleItem[0].data[0].date_created).from()}</p>
+                                <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
                             </div>
                         }
                     </div>
