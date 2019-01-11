@@ -18,25 +18,28 @@ class SingleItem extends Component {
         const { loading, singleItem, assets, error } = this.state
         return (
             <div>
-                {!error && loading && <Loading />}
+                {loading && <Loading />}
 
                 {!loading && singleItem.length === 0 &&
                     <div>
                         <p className="ErrorLoad">There was a problem retreiving the information, please try another search</p>
+                        <button onClick={() => navigate('/search')}>
+                            <i className="fas fa-chevron-circle-left fa-5x"></i>
+                        </button>
+                    </div>
+                }
+
+                {error &&
+                    <div>
+                        <p className="ErrorLoad">Loading failed, please try another search</p>
                         <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-5x"></i></button>
                     </div>
-                    }
-
-                {error && 
-                <div>
-                <p className="ErrorLoad">Loading failed, please try another search</p>
-                <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-5x"></i></button>
-            </div>
-                
                 }
 
                 {!loading && singleItem.length > 0 &&
-                    <div style={{ paddingTop: '40px' }}>
+                
+                    <div>
+                        
                         {singleItem[0].data[0].media_type === 'image' && <div className="hvrbox">
                             <img
                                 src={singleItem[0].links[0].href}
@@ -58,8 +61,8 @@ class SingleItem extends Component {
                                     <source src={assets[0].href} type="video/mp4" />
                                     <source src={assets[1].href} type="video/mp4" />
                                 </video>
-                                <h1>{singleItem[0].data[0].title.replace(new RegExp("\\-|_","g"),' ')}</h1>
-                                <p className="Description">{singleItem[0].data[0].description.replace(new RegExp("\\-|_","g"),' ')}</p>
+                                <h1>{singleItem[0].data[0].title.replace(new RegExp("\\-|_", "g"), ' ')}</h1>
+                                <p className="Description">{singleItem[0].data[0].description.replace(new RegExp("\\-|_", "g"), ' ')}</p>
                                 <p className="Created">Created: {moment(singleItem[0].data[0].date_created).from()}</p>
                                 <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
                             </div>

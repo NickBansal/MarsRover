@@ -1,11 +1,11 @@
 .wrap {
 	width: 100%;
-	position: absolute;
 	top: 50%;
 }
 .spinner-wrap {
 	margin: auto;
 	position: absolute;
+	top: 45%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -19,7 +19,7 @@
 	animation: spin 1s steps(12, end) infinite;
 	
 	&:first-child {
-		margin-right: 50px;
+		margin-right: 0;
 	}
 	
 	i {

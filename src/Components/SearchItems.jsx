@@ -35,19 +35,22 @@ const SearchItems = ({ allItems, handleClick, input }) => {
             {allItemsCopy.length === 0 && <p className='EnterSearch'>{filterMessage} available for this search</p>}
 
             {allItemsCopy.map(items => {
+                const { title, nasa_id } = items.data[0]
+                const { href } = items.links[0]
+                const newTitle = title.length < 37 ? title : `${title.substring(0, 37)}...`
                 return (
                     <Link
-                        key={items.data[0].nasa_id}
-                        to={`/search/${items.data[0].nasa_id}`}>
+                        key={nasa_id}
+                        to={`/search/${nasa_id}`}>
                         <div
                             className="SingleThumbnail">
                             <img
                                 onError={addDefaultSrc}
-                                src={items.links[0].href}
-                                alt={items.data[0].title} />
+                                src={href}
+                                alt={title} />
                             <div className="SingleThumbnailTitle">
                                 <strong>
-                                    <p>{items.data[0].title.substring(0, 40).replace(new RegExp("\\-|_", "g"), ' ')}</p>
+                                    <p>{newTitle.replace(new RegExp("\\-|_", "g"), ' ')}</p>
                                 </strong>
                             </div>
                         </div>

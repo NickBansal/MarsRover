@@ -116,6 +116,9 @@ a {
     p.EnterSearch, p.ErrorMessage, p.EmptyMessage {
         font-size: 20px
     }
+    .AllSearchItems {
+        height: 75vh
+    }
 }
 
 @media (max-width: 500px) {
