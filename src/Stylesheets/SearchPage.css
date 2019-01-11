@@ -26,7 +26,7 @@
 }
 
 .SingleThumbnail p {
-    font-size: 13px;
+    font-size: 15px;
     margin: 0;
     padding: 0 10px;
 }
@@ -86,7 +86,7 @@ a {
         border: 2px white solid
     }
     .SingleThumbnail p {
-        font-size: 12px;
+        font-size: 13px;
     }
     p.EnterSearch, p.ErrorMessage, p.EmptyMessage {
         font-size: 20px
