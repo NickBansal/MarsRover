@@ -110,8 +110,10 @@
 }
 
 video {
-	height: 350px;
-	width: 550px
+	height: 310px;
+	width: 550px;
+	border-radius: 20px;
+    border: 3px solid white;
 }
 
 .VideoPlayback p {
@@ -156,7 +158,7 @@ video {
 		font-size: 13px
 	}
 	video {
-		height: 190px;
+		height: 175px;
 		width: 300px
 	}
 	.VideoPlayback p {
