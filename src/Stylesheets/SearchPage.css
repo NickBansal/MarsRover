@@ -9,6 +9,14 @@
     vertical-align: top;
 }
 
+.SingleThumbnailTitle {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .SingleThumbnail:hover {
     background: lightgrey;
     color: #162e4a;
@@ -88,6 +96,11 @@ a {
     .SingleThumbnail p {
         font-size: 13px;
     }
+
+    .SingleThumbnailTitle {
+        height: 40px; 
+    }
+
     .Results {
         font-size: 17px;
         flex-direction: column-reverse;
@@ -134,9 +147,5 @@ a {
     }
     .SingleThumbnailTitle {
         height: 100%; 
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center
     }
 }
