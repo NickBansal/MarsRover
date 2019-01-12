@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Stylesheets/SearchPage.css'
 import { Link } from '@reach/router'
-import NasaLogo from '../Stylesheets/Images/NasaLogo.png';
+import NasaLogo from '../Stylesheets/Images/NasaImage.png';
 
 const addDefaultSrc = (event) => {
     event.target.src = `${NasaLogo}`

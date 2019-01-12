@@ -1,4 +1,4 @@
-export default {
+export default [{
   "collection": {
     "version": "1.0",
     "links": [
@@ -145,4 +145,4 @@ export default {
     },
     "href": "https://images-api.nasa.gov/search?q=mars"
   }
-}
+}]

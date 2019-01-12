@@ -1,34 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SingleItem /> Component matches the snapshot 1`] = `
-<SingleItem>
-  <div>
-    <Loading>
-      <div
-        className="wrap"
-      >
-        <div
-          className="spinner-wrap"
-        >
-          <div
-            className="spinner"
-          >
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-            <i />
-          </div>
-        </div>
-      </div>
-    </Loading>
-  </div>
-</SingleItem>
+<div>
+  <Loading />
+</div>
 `;
