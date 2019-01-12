@@ -4,6 +4,7 @@ import { Router } from '@reach/router'
 import LandingPage from './Pages/LandingPage'
 import SearchPage from './Pages/SearchPage'
 import Stars from './Stylesheets/Images/stars.png'
+import NotFound from './Warnings/404NotFound'
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
         <Router>
           <LandingPage path='/'/>
           <SearchPage path='/search/*'/>
+          <NotFound default />
         </Router>
       </div>
     </div>

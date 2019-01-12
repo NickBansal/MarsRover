@@ -5,10 +5,10 @@ import '../Stylesheets/SearchPage.css'
 import SearchItems from '../Components/SearchItems'
 import SingleItem from '../Pages/SingleItem'
 import { Router, navigate } from '@reach/router'
-import ErrorMessage from '../Errors/ErrorMessage'
+import ErrorMessage from '../Warnings/ErrorMessage'
 import Loading from '../Components/Loading'
-import EmptyMessage from '../Errors/EmptyMessage'
-import EnterSearch from '../Errors/EnterSearch'
+import EmptyMessage from '../Warnings/EmptyMessage'
+import EnterSearch from '../Warnings/EnterSearch'
 
 class SearchPage extends Component {
 
@@ -20,7 +20,7 @@ class SearchPage extends Component {
         upper: true,
         input: "image"
     }
-
+    
     render() {
         const { allItems, start, loading, searchTerm, input } = this.state
         return (
@@ -28,6 +28,7 @@ class SearchPage extends Component {
                 <Navbar handleSubmit={this.handleSubmit} />
                 <div className="AllSearchItems">
                 <Router>
+            
                     {start && <EnterSearch path='/'/>}
 
                     {!start && !searchTerm && <EmptyMessage path="/"/>}
@@ -46,6 +47,7 @@ class SearchPage extends Component {
                     <ErrorMessage path="/"/>}
 
                     <SingleItem path="/:id" />
+
                 </Router>
                 </div>
             </div>
@@ -82,7 +84,11 @@ class SearchPage extends Component {
                     loading: false
                 })
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                this.setState({
+                    error
+                })
+            })
         }
     }
 }
