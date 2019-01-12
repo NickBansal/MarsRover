@@ -1,22 +1,35 @@
 import React from 'react';
 import mockAxios from "axios";
 import testData from "../__mocks__/testData";
-import { shallow } from 'enzyme';
-const API_URL = 'https://images-api.nasa.gov'
+import assetData from '../__mocks__/assetData'
+import * as api from '../api'
 
 describe.only('Testing mock api calls', () => {
-    it('Makes calls to axios and returns data', () => {
 
+    it('Axios search returns all items', async () => {
         mockAxios.get.mockImplementationOnce(() =>
             Promise.resolve({
-                data: {
-                    results: [testData]
-                }
+                data: { testData }
             })
         );
-
-        const fetchData =  mockAxios.get(`${API_URL}/search?q=mars`)
-
+        const fetchData = await api.getItems('Earth')
+        expect(fetchData.testData).toEqual(testData)  
+        expect(fetchData.testData.collection.items.length).toBeGreaterThan(1)      
         expect(mockAxios.get).toHaveBeenCalledTimes(1)
+        expect(mockAxios.get).toHaveBeenCalledWith("https://images-api.nasa.gov/search?q=Earth")
     })
+    
+    it('Axios asset search returns all items media files', async () => {
+        mockAxios.get.mockImplementationOnce(() =>
+            Promise.resolve({
+                data: { assetData }
+            })
+        );
+        const fetchData = await api.assetData('PIA04778')
+        expect(fetchData.assetData).toEqual(assetData)  
+        expect(fetchData.assetData.collection.items.length).toBeGreaterThan(1)      
+        expect(mockAxios.get).toHaveBeenCalledTimes(2)
+        expect(mockAxios.get).toHaveBeenCalledWith("https://images-api.nasa.gov/asset/PIA04778")
+    })
+
 })
