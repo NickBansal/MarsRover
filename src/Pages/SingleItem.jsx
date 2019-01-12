@@ -46,7 +46,9 @@ class SingleItem extends Component {
                             <div className="hvrbox-layer_top hvrbox-layer_scale">
                                 <div className="hvrbox-text">
                                     <h1>{singleItem[0].data[0].title}</h1>
-                                    <p className="Description">{singleItem[0].data[0].description}</p>
+                                    {singleItem[0].data[0].description &&
+                                        <p className="Description">{singleItem[0].data[0].description}</p>
+                                    }
                                     <p className="Created">Created: {moment(singleItem[0].data[0].date_created).from()}</p>
                                 </div>
                             </div>
@@ -59,7 +61,9 @@ class SingleItem extends Component {
                                     <source src={assets[1].href} type="video/mp4" />
                                 </video>
                                 <h1>{singleItem[0].data[0].title.replace(new RegExp("\\-|_", "g"), ' ')}</h1>
-                                <p className="Description">{singleItem[0].data[0].description.replace(new RegExp("\\-|_", "g"), ' ')}</p>
+                                {singleItem[0].data[0].description &&
+                                    <p className="Description">{singleItem[0].data[0].description.replace(new RegExp("\\-|_", "g"), ' ')}</p>
+                                }
                                 <p className="Created">Created: {moment(singleItem[0].data[0].date_created).from()}</p>
                             </div>
                         }
