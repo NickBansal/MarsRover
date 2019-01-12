@@ -6,13 +6,13 @@ Mars Rover is a front end web application built in ReactJS. This project aims to
 
 ## Installing a Local Copy
 
-These instructions will help you to get a copy of NC News up and running on your local machine for testing purposes.
+These instructions will help you to get a copy of this project up and running on your local machine for testing purposes.
 
 ### Installing
 
 Please ensure you have [Node.js](https://nodejs.org/en/download/) installed.
 
-Duplicate or fork this repository from [github.com/ben-web/NC-News-Front-End](https://github.com/ben-web/NC-News-Front-End).
+Duplicate or fork this repository from [Github](https://github.com/NickBansal/MarsRover).
 
 Inside this new directory, install the required NPM packages:
 
@@ -38,6 +38,7 @@ If successful, your browser should open [http://localhost:3000](http://localhost
 * [Axios](https://www.npmjs.com/package/axios) - A promised based HTTP client (alternative to Fetch)
 * [Jest](https://jestjs.io/) - Test all JavaScript code
 * [Enzyme](https://airbnb.io/enzyme/docs/api/) - Test all ReactJS components
+* [MomentJS](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 
 ## Author
 
