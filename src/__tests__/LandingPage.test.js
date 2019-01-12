@@ -2,9 +2,10 @@ import '../setupTest';
 import React from 'react';
 import LandingPage from '../Pages/LandingPage';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json'
+import toJson from "enzyme-to-json";
 
-describe.only('<LandingPage />', () => {
+
+describe('<LandingPage />', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallow(<LandingPage />)

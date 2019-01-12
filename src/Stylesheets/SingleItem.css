@@ -130,6 +130,10 @@ video {
 	transition: 0.2s
 }
 
+.fa-5x {
+	font-size: 5em;
+}
+
 button {
 	background: none;
 	outline: none;
@@ -195,5 +199,8 @@ button {
 	}
 	.ErrorLoad {
 		font-size: 20px
+	}
+	.fa-5x {
+		font-size: 3em;
 	}
 }
