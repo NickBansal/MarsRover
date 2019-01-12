@@ -37,7 +37,7 @@ class SingleItem extends Component {
                 }
 
                 {!loading && singleItem.length > 0 &&
-                    <div>
+                    <div className="WholeSingleItemPage">
                         {singleItem[0].data[0].media_type === 'image' && <div className="hvrbox">
                             <img
                                 src={singleItem[0].links[0].href}
@@ -51,7 +51,6 @@ class SingleItem extends Component {
                                 </div>
                             </div>
                             <p>Please hover over the image for more detail</p>
-                            <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
                         </div>}
                         {singleItem[0].data[0].media_type === 'video' &&
                             <div className="VideoPlayback">
@@ -62,9 +61,9 @@ class SingleItem extends Component {
                                 <h1>{singleItem[0].data[0].title.replace(new RegExp("\\-|_", "g"), ' ')}</h1>
                                 <p className="Description">{singleItem[0].data[0].description.replace(new RegExp("\\-|_", "g"), ' ')}</p>
                                 <p className="Created">Created: {moment(singleItem[0].data[0].date_created).from()}</p>
-                                <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
                             </div>
                         }
+                        <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
                     </div>
                 }
             </div>

@@ -5,10 +5,10 @@ import '../Stylesheets/SearchPage.css'
 import SearchItems from '../Components/SearchItems'
 import SingleItem from '../Pages/SingleItem'
 import { Router, navigate } from '@reach/router'
-import ErrorMessage from '../Error/ErrorMessage'
+import ErrorMessage from '../Errors/ErrorMessage'
 import Loading from '../Components/Loading'
-import EmptyMessage from '../Error/EmptyMessage'
-import EnterSearch from '../Error/EnterSearch'
+import EmptyMessage from '../Errors/EmptyMessage'
+import EnterSearch from '../Errors/EnterSearch'
 
 class SearchPage extends Component {
 
