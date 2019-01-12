@@ -36,8 +36,8 @@ If successful, your browser should open [http://localhost:3000](http://localhost
 * [Node.js](https://nodejs.org/) - JavaScript runtime built on [Chrome's V8 JavaScript engine](https://developers.google.com/v8/)
 * [React.js](https://reactjs.org/) - Facebook's JavaScript library for building user interfaces
 * [Axios](https://www.npmjs.com/package/axios) - A promised based HTTP client (alternative to Fetch)
-* [Jest](https://jestjs.io/) - Test all JavaScript code
-* [Enzyme](https://airbnb.io/enzyme/docs/api/) - Test all ReactJS components
+* [Jest](https://jestjs.io/) - A JavaScript unit testing framework
+* [Enzyme](https://airbnb.io/enzyme/docs/api/) - JavaScript Testing utility for React 
 * [MomentJS](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
 
 ## Author
