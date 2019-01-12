@@ -14,12 +14,4 @@ describe.only('<SingleItem />', () => {
     it('Component matches the snapshot', () => {
         expect(toJson(wrapper)).toMatchSnapshot()
     })
-
-    // it('calls componentDidMount', () => {
-    //     sinon.spy(SingleItem.prototype, 'componentDidMount');
-   
-    //     expect(SingleItem.prototype.componentDidMount).to.have.property('loading', 1);
-    //     SingleItem.prototype.componentDidMount.restore();
-    // });
-
 })
