@@ -137,7 +137,7 @@ button {
 
 .VideoPlayback {
 	opacity: 0;
-	animation: 1 fadein 1s forwards
+	animation: 1 fadein 1.5s forwards
 }
 
 .VideoPlayback p {
