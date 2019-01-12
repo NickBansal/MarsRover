@@ -37,9 +37,7 @@ class SingleItem extends Component {
                 }
 
                 {!loading && singleItem.length > 0 &&
-                
                     <div>
-                        
                         {singleItem[0].data[0].media_type === 'image' && <div className="hvrbox">
                             <img
                                 src={singleItem[0].links[0].href}
