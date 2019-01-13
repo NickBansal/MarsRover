@@ -132,7 +132,7 @@ export default [{
             ],
             "title": "Mars-shine",
             "secondary_creator": "NASA/JPL-Caltech/Cornell",
-            "media_type": "image",
+            "media_type": "video",
             "description": "Mars-shine",
             "center": "JPL"
           }

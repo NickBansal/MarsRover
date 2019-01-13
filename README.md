@@ -25,7 +25,7 @@ npm install
 To start the application, run this command in the CLI:
 
 ```bash
-npm run start
+npm start
 ```
 
 If successful, your browser should open [http://localhost:3000](http://localhost:3000).
