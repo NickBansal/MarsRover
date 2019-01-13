@@ -31,7 +31,7 @@ class SingleItem extends Component {
 
                 {error &&
                     <div>
-                        <p className="ErrorLoad">Loading failed, please try another search</p>
+                        <p className="ErrorLoad">Request failed, please try another search</p>
                         <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-5x"></i></button>
                     </div>
                 }
@@ -87,7 +87,7 @@ class SingleItem extends Component {
             })
             .catch(error => {
                 this.setState({
-                    error
+                    error: error.message
                 })
             })
     }
