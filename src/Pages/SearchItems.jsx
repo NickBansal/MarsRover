@@ -1,12 +1,9 @@
 import React from 'react'
 import '../Stylesheets/SearchPage.css'
 import { Link } from '@reach/router'
-import NasaLogo from '../Stylesheets/Images/NasaImage.png'
 import MediaSelectForm from '../Components/MediaSelectForm'
+import SingleThumbnail from '../Components/SingleThumbnail'
 
-const addDefaultSrc = (event) => {
-  event.target.src = `${NasaLogo}`
-}
 
 const SearchItems = ({ allItems, handleClick, input }) => {
   let allItemsCopy = allItems.filter(data => data.data[0].media_type === input)
@@ -30,18 +27,7 @@ const SearchItems = ({ allItems, handleClick, input }) => {
           <Link
             key={nasa_id}
             to={`/search/${nasa_id}`}>
-            <div
-              className='SingleThumbnail'>
-              <img
-                onError={addDefaultSrc}
-                src={href}
-                alt={title} />
-              <div className='SingleThumbnailTitle'>
-                <strong>
-                  <p>{newTitle.replace(new RegExp('\\-|_', 'g'), ' ')}</p>
-                </strong>
-              </div>
-            </div>
+            <SingleThumbnail href={href} title={title} newTitle={newTitle}/>
           </Link>
         )
       })}
