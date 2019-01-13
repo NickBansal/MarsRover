@@ -1,18 +1,22 @@
 import '../setupTest';
 import React from 'react'
 import SearchPage from '../Pages/SearchPage';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import toJson from "enzyme-to-json";
+import mockAxios from 'axios'
+// import testData from "../__mocks__/testData";
+// import assetData from '../__mocks__/assetData'
+// import * as api from '../api'
+// import mockAxios from "axios";
 
-describe('<SearchPage />', () => {
-    let wrapper
-    beforeEach(() => {
-        wrapper = shallow(<SearchPage />)
-    })
+describe.only('<SearchPage />', () => {
+
     it('Component matches the snapshot', () => {
+        const wrapper = shallow(<SearchPage />)
         expect(toJson(wrapper)).toMatchSnapshot()
     })
     it('Changes state on click handler', () => {
+        const wrapper = shallow(<SearchPage />)
         wrapper.instance().handleClick('video')
         expect(wrapper.state().input).toBe('video')
         wrapper.instance().handleClick('image')
@@ -21,6 +25,7 @@ describe('<SearchPage />', () => {
         expect(wrapper.state().input).toBe('audio')
     })
     it('Changes state on handle submit', () => {
+        const wrapper = shallow(<SearchPage />)
         wrapper.instance().handleSubmit('Earth')
         
         expect(wrapper.state().loading).toBe(true)
@@ -32,5 +37,19 @@ describe('<SearchPage />', () => {
         wrapper.instance().handleSubmit('Earth')
         expect(wrapper.state().searchTerm).toBe('EARTH')
         expect(wrapper.state().upper).toBe(true)
+    })
+    it('Sets the state with api calls in componentDidMount', (done) => {
+        mockAxios.get.mockImplementationOnce(() =>
+            Promise.resolve({
+                data: testData
+            })
+        );
+     
+        const wrapper = shallow(<SearchPage />)
+        //SETSTATE
+        setTimeout(() => {
+            console.log(wrapper.state())
+            done()
+        }, 50)
     })
 })

@@ -13,6 +13,7 @@ exports[`<SearchPage /> Component matches the snapshot 1`] = `
       >
         <input
           defaultChecked={true}
+          id="image"
           name="gender"
           type="radio"
           value="image"
@@ -27,6 +28,7 @@ exports[`<SearchPage /> Component matches the snapshot 1`] = `
         className="RadioSelect"
       >
         <input
+          id="video"
           name="gender"
           type="radio"
           value="video"
@@ -41,6 +43,7 @@ exports[`<SearchPage /> Component matches the snapshot 1`] = `
         className="RadioSelect"
       >
         <input
+          id="audio"
           name="gender"
           type="radio"
           value="audio"

@@ -1,4 +1,4 @@
-export default [{
+export default {
   "collection": {
     "version": "1.0",
     "items": [
@@ -11,4 +11,4 @@ export default [{
     ],
     "href": "https://images-api.nasa.gov/asset/PIA04778"
   }
-}]
+}
