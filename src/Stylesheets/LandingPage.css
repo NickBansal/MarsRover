@@ -1,46 +1,79 @@
 .LandingPage {
     height: 70vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center
 }
 
 .LandingPage img {
     opacity: 0;
     height: 300px;
-    transform: translateX(-200px);
-    animation: 1 slidein 1s forwards
+    -webkit-transform: translateX(-200px);
+        -ms-transform: translateX(-200px);
+            transform: translateX(-200px);
+    -webkit-animation: 1 slidein 1s forwards;
+            animation: 1 slidein 1s forwards
 }
 
 a {
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s
 }
 
 a:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
     transition: 0.2s
 }
 
 .LandingPage h1 {
     font-size: 30px;
     opacity: 0;
-    transform: translateX(200px);
-    animation: 1 slidein 1s forwards;
-    animation-delay: 0.5s
+    -webkit-transform: translateX(200px);
+        -ms-transform: translateX(200px);
+            transform: translateX(200px);
+    -webkit-animation: 1 slidein 1s forwards;
+            animation: 1 slidein 1s forwards;
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s
 }
 
 .LandingPage p {
     margin: 0;
     opacity: 0;
-    animation: 1 slidein 1.2s forwards;
-    animation-delay: 1.2s
+    -webkit-animation: 1 slidein 1.2s forwards;
+            animation: 1 slidein 1.2s forwards;
+    -webkit-animation-delay: 1.2s;
+            animation-delay: 1.2s
+}
+
+@-webkit-keyframes slidein {
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
 }
 
 @keyframes slidein {
     100% {
         opacity: 1;
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
     }
 }
 

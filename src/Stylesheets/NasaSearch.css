@@ -1,6 +1,7 @@
 input[type=text] {
   width: 130px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 10px;
   font-size: 23px;
@@ -10,13 +11,18 @@ input[type=text] {
   padding: 12px 15px;
   border: 5px solid white;
   -webkit-transition: width 0.4s ease-in-out;
+  -o-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
   float: right;
 }
 
 form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
 }
   
 input[type=text]:focus {
@@ -24,7 +30,6 @@ input[type=text]:focus {
   border: 5px solid white;
   outline: none;
   -webkit-box-shadow: inset 1px 1px 127px -30px rgba(0,0,0,0.4);
-  -moz-box-shadow: inset 1px 1px 127px -30px rgba(0,0,0,0.4);
   box-shadow: inset 1px 1px 127px -30px rgba(0,0,0,0.4);
 }
 

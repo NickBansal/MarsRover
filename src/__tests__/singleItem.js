@@ -3,12 +3,10 @@ import React from 'react';
 import SingleItem from '../Pages/SingleItem';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import * as api from '../api'
+import '../setupTest';
 
 
-jest.mock(api.getItems)
-
-describe.only('<SingleItem />', () => {
+describe('<SingleItem />', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallow(<SingleItem />)

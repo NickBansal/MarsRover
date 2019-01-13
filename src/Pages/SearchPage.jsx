@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Navbar from '../Components/Navbar'
 import * as api from '../api';
 import '../Stylesheets/SearchPage.css'
-import SearchItems from '../Components/SearchItems'
+import SearchItems from './SearchItems'
 import SingleItem from '../Pages/SingleItem'
 import { Router, navigate } from '@reach/router'
 import ErrorMessage from '../Warnings/ErrorMessage'
@@ -86,7 +86,7 @@ class SearchPage extends Component {
             })
             .catch(error => {
                 this.setState({
-                    error
+                    error: error.message
                 })
             })
         }

@@ -1,15 +1,28 @@
 .Navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 20px 40px;
     color: white;
     opacity: 0;
-    animation: 1 fadein 1s forwards
+    -webkit-animation: 1 fadein 1s forwards;
+            animation: 1 fadein 1s forwards
 }
 
 .NasaLogo {
     height: 80px
+}
+
+@-webkit-keyframes fadein {
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes fadein {
@@ -20,7 +33,10 @@
 
 @media (max-width: 600px) {
     .Navbar {
-        flex-direction: column
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column
     }
     .NasaLogo {
         margin-bottom: 20px
