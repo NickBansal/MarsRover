@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchPage /> Component matches the snapshot 1`] = `
+<div>
+  <p
+    className="EnterSearch"
+  >
+    There are no images
+     available for this search
+  </p>
+</div>
+`;

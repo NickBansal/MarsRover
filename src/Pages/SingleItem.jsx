@@ -45,7 +45,7 @@ class SingleItem extends Component {
                                 className="hvrbox-layer_bottom" />
                             <div className="hvrbox-layer_top hvrbox-layer_scale">
                                 <div className="hvrbox-text">
-                                    <h1>{singleItem[0].data[0].title}</h1>
+                                    <h1>{singleItem[0].data[0].title.replace(new RegExp("\\-|_", "g"), ' ')}</h1>
                                     {singleItem[0].data[0].description &&
                                         <p className="Description">{singleItem[0].data[0].description}</p>
                                     }

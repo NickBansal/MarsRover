@@ -4,7 +4,7 @@ import SearchPage from '../Pages/SearchPage';
 import { shallow } from 'enzyme';
 import toJson from "enzyme-to-json";
 
-describe.only('<SearchPage />', () => {
+describe('<SearchPage />', () => {
     let wrapper
     beforeEach(() => {
         wrapper = shallow(<SearchPage />)
@@ -22,6 +22,7 @@ describe.only('<SearchPage />', () => {
     })
     it('Changes state on handle submit', () => {
         wrapper.instance().handleSubmit('Earth')
+        
         expect(wrapper.state().loading).toBe(true)
         expect(wrapper.state().start).toBe(false)
         expect(wrapper.state().allItems.length).toBe(0)

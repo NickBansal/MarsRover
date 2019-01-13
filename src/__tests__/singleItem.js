@@ -1,4 +1,3 @@
-import '../setupTest';
 import React from 'react';
 import SingleItem from '../Pages/SingleItem';
 import { shallow } from 'enzyme';
