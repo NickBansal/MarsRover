@@ -48,7 +48,7 @@ describe.only('<SearchPage />', () => {
         const wrapper = shallow(<SearchPage />)
         //SETSTATE
         setTimeout(() => {
-            console.log(wrapper.state())
+            // console.log(wrapper.state())
             done()
         }, 50)
     })
