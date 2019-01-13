@@ -39,20 +39,20 @@ class SingleItem extends Component {
 
                 {!loading && itemData.length > 0 &&
                     <div className="WholeSingleItemPage">
-                        {itemData[0].data[0].media_type === 'image' && 
-                        <Image 
-                        created={itemData[0].data[0].date_created}
-                        description={itemData[0].data[0].description}
-                        title={itemData[0].data[0].title}
-                        imgSrc={itemData[0].links[0].href}/>
-                    }
+                        {itemData[0].data[0].media_type === 'image' &&
+                            <Image
+                                created={itemData[0].data[0].date_created}
+                                description={itemData[0].data[0].description}
+                                title={itemData[0].data[0].title}
+                                imgSrc={itemData[0].links[0].href} />
+                        }
                         {itemData[0].data[0].media_type === 'video' &&
-                            <Video 
-                            created={itemData[0].data[0].date_created}
-                            description={itemData[0].data[0].description}
-                            title={itemData[0].data[0].title}
-                            src1={assets[0].href} 
-                            src2={assets[1].href}/>
+                            <Video
+                                created={itemData[0].data[0].date_created}
+                                description={itemData[0].data[0].description}
+                                title={itemData[0].data[0].title}
+                                src1={assets[0].href}
+                                src2={assets[1].href} />
                         }
                         <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
                     </div>

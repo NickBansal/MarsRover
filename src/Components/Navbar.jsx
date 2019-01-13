@@ -4,12 +4,12 @@ import NasaSearch from './NasaSearch'
 import NasaLogo from '../Stylesheets/Images/NasaLogo.png'
 
 const Navbar = ({ handleSubmit }) => {
-    return (
-        <div className="Navbar">
-            <img className="NasaLogo" src={NasaLogo} alt="Logo"/>
-            <NasaSearch handleSubmit={handleSubmit}/>
-        </div>
-    )
+  return (
+    <div className='Navbar'>
+      <img className='NasaLogo' src={NasaLogo} alt='Logo' />
+      <NasaSearch handleSubmit={handleSubmit} />
+    </div>
+  )
 }
 
 export default Navbar
