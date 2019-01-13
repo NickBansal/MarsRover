@@ -8,7 +8,7 @@ import imageSingleData from "../__mocks__/imageSingleData";
 import assetData from '../__mocks__/assetData'
 import mockAxios from 'axios'
 
-describe.only('<SingleItem />', () => {
+describe('<SingleItem />', () => {
 
     it('Component matches the snapshot', () => {
         const wrapper = mount(<SingleItem />)
@@ -66,12 +66,12 @@ describe.only('<SingleItem />', () => {
         setTimeout(() => {
             wrapper.update();
 
-            //STATE
+            // STATE
             expect(wrapper.state().loading).toBe(false)
             expect(wrapper.state().assets.length).toBe(2)
             expect(wrapper.state().itemData.length).toBe(1)
 
-            // // HTML PAGE ELEMENTS
+            // HTML PAGE ELEMENTS
             expect(wrapper.find('div.VideoPlayback').exists()).toBe(true)
             expect(wrapper.find('.VideoPlayback h1').text()).toBe("Mars shine")
             expect(wrapper.find('Loading').exists()).toBe(false)
@@ -79,7 +79,7 @@ describe.only('<SingleItem />', () => {
         }, 50)
     })
 
-    it.only('If no data is returned error message is given', done => {
+    it('If no data is returned error message is given', done => {
         mockAxios.get.mockImplementationOnce(() =>
             Promise.resolve({
                 data: []

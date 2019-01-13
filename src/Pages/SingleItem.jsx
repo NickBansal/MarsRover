@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import * as api from '../api';
 import '../Stylesheets/SingleItem.css'
 import Loading from '../Components/Loading'
-import moment from 'moment'
 import { navigate } from '@reach/router'
+import Video from '../Components/Video'
+import Image from '../Components/Image'
 
 class SingleItem extends Component {
 
@@ -39,34 +40,19 @@ class SingleItem extends Component {
                 {!loading && itemData.length > 0 &&
                     <div className="WholeSingleItemPage">
                         {itemData[0].data[0].media_type === 'image' && 
-                        <div className="hvrbox">
-                            <img
-                                src={itemData[0].links[0].href}
-                                alt={itemData[0].data[0].title}
-                                className="hvrbox-layer_bottom" />
-                            <div className="hvrbox-layer_top hvrbox-layer_scale">
-                                <div className="hvrbox-text">
-                                    <h1>{itemData[0].data[0].title.replace(new RegExp("\\-|_", "g"), ' ')}</h1>
-                                    {itemData[0].data[0].description &&
-                                        <p className="Description">{itemData[0].data[0].description}</p>
-                                    }
-                                    <p className="Created">Created: {moment(itemData[0].data[0].date_created).from()}</p>
-                                </div>
-                            </div>
-                            <p>Please hover over the image for more detail</p>
-                        </div>}
+                        <Image 
+                        created={itemData[0].data[0].date_created}
+                        description={itemData[0].data[0].description}
+                        title={itemData[0].data[0].title}
+                        imgSrc={itemData[0].links[0].href}/>
+                    }
                         {itemData[0].data[0].media_type === 'video' &&
-                            <div className="VideoPlayback">
-                                <video width="550" height="550" controls>
-                                    <source src={assets[0].href} type="video/mp4" />
-                                    <source src={assets[1].href} type="video/mp4" />
-                                </video>
-                                <h1>{itemData[0].data[0].title.replace(new RegExp("\\-|_", "g"), ' ')}</h1>
-                                {itemData[0].data[0].description &&
-                                    <p className="Description">{itemData[0].data[0].description.replace(new RegExp("\\-|_", "g"), ' ')}</p>
-                                }
-                                <p className="Created">Created: {moment(itemData[0].data[0].date_created).from()}</p>
-                            </div>
+                            <Video 
+                            created={itemData[0].data[0].date_created}
+                            description={itemData[0].data[0].description}
+                            title={itemData[0].data[0].title}
+                            src1={assets[0].href} 
+                            src2={assets[1].href}/>
                         }
                         <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
                     </div>

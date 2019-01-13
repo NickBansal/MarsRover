@@ -1,13 +1,10 @@
 import '../setupTest';
 import React from 'react'
 import SearchPage from '../Pages/SearchPage';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from "enzyme-to-json";
 import mockAxios from 'axios'
-// import testData from "../__mocks__/testData";
-// import assetData from '../__mocks__/assetData'
-// import * as api from '../api'
-// import mockAxios from "axios";
+import testData from "../__mocks__/testData";
 
 describe.only('<SearchPage />', () => {
 
@@ -46,9 +43,13 @@ describe.only('<SearchPage />', () => {
         );
      
         const wrapper = shallow(<SearchPage />)
-        //SETSTATE
+        wrapper.setState({ searchTerm: "Nasa" })
+    
         setTimeout(() => {
-            // console.log(wrapper.state())
+            wrapper.update()
+       
+            expect(wrapper.state().loading).toBe(false)
+            expect(wrapper.state().searchTerm).toBe('Nasa')
             done()
         }, 50)
     })
