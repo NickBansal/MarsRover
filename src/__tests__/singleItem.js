@@ -31,7 +31,6 @@ describe('<SingleItem />', () => {
     expect(wrapper.state().assets.length).toBe(0)
     expect(wrapper.state().itemData.length).toBe(0)
     expect(wrapper.find('Loading').exists()).toBe(true)
-    // console.log(wrapper.debug())q
 
     setTimeout(() => {
       wrapper.update()
