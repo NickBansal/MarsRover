@@ -5,56 +5,9 @@ exports[`<SearchPage /> Component matches the snapshot 1`] = `
   <div
     className="Results"
   >
-    <form
-      onClick={[Function]}
-    >
-      <div
-        className="RadioSelect"
-      >
-        <input
-          defaultChecked={true}
-          id="image"
-          name="gender"
-          type="radio"
-          value="image"
-        />
-        <label
-          value="image"
-        >
-          Image
-        </label>
-      </div>
-      <div
-        className="RadioSelect"
-      >
-        <input
-          id="video"
-          name="gender"
-          type="radio"
-          value="video"
-        />
-        <label
-          value="video"
-        >
-          Video
-        </label>
-      </div>
-      <div
-        className="RadioSelect"
-      >
-        <input
-          id="audio"
-          name="gender"
-          type="radio"
-          value="audio"
-        />
-        <label
-          value="audio"
-        >
-          Audio
-        </label>
-      </div>
-    </form>
+    <MediaSelectForm
+      handleClick={[Function]}
+    />
     <p>
       Results: 
       0

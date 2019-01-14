@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import * as api from '../api';
+import * as api from '../api'
 import '../Stylesheets/SingleItem.css'
 import Loading from '../Components/Loading'
 import { navigate } from '@reach/router'
@@ -23,22 +23,22 @@ class SingleItem extends Component {
 
                 {!loading && itemData.length === 0 &&
                     <div>
-                        <p className="ErrorLoad">There was a problem retreiving the information, please try another search</p>
+                        <p className='ErrorLoad'>There was a problem retreiving the information, please try another search</p>
                         <button onClick={() => navigate('/search')}>
-                            <i className="fas fa-chevron-circle-left fa-5x"></i>
+                            <i className='fas fa-chevron-circle-left fa-5x'></i>
                         </button>
                     </div>
                 }
 
                 {error &&
                     <div>
-                        <p className="ErrorLoad">Request failed, please try another search</p>
-                        <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-5x"></i></button>
+                        <p className='ErrorLoad'>Request failed, please try another search</p>
+                        <button onClick={() => navigate('/search')}><i className='fas fa-chevron-circle-left fa-5x'></i></button>
                     </div>
                 }
 
                 {!loading && itemData.length > 0 &&
-                    <div className="WholeSingleItemPage">
+                    <div className='WholeSingleItemPage'>
                         {itemData[0].data[0].media_type === 'image' &&
                             <Image
                                 created={itemData[0].data[0].date_created}
@@ -54,7 +54,7 @@ class SingleItem extends Component {
                                 src1={assets[0].href}
                                 src2={assets[1].href} />
                         }
-                        <button onClick={() => navigate('/search')}><i className="fas fa-chevron-circle-left fa-3x"></i></button>
+                        <button onClick={() => navigate('/search')}><i className='fas fa-chevron-circle-left fa-3x'></i></button>
                     </div>
                 }
             </div>

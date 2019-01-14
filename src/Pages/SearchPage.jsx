@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from '../Components/Navbar'
-import * as api from '../api';
+import * as api from '../api'
 import '../Stylesheets/SearchPage.css'
 import SearchItems from './SearchItems'
 import SingleItem from '../Pages/SingleItem'
@@ -13,12 +13,12 @@ import EnterSearch from '../Warnings/EnterSearch'
 class SearchPage extends Component {
 
     state = {
-        searchTerm: "",
+        searchTerm: '',
         allItems: [],
         start: true,
         loading: true,
         upper: true,
-        input: "image"
+        input: 'image'
     }
     
     render() {
@@ -26,27 +26,27 @@ class SearchPage extends Component {
         return (
             <div className='SearchPage'>
                 <Navbar handleSubmit={this.handleSubmit} />
-                <div className="AllSearchItems">
+                <div className='AllSearchItems'>
                 <Router>
             
                     {start && <EnterSearch path='/'/>}
 
-                    {!start && !searchTerm && <EmptyMessage path="/"/>}
+                    {!start && !searchTerm && <EmptyMessage path='/'/>}
 
                     {loading && !start && <Loading path='/'/>}
 
                     {allItems.length > 0 && 
                     <SearchItems 
-                    path="/" 
+                    path='/' 
                     handleClick={this.handleClick}
                     input={input}
                     start={start}
                     allItems={allItems} />}
 
                     {allItems.length === 0 && !start &&
-                    <ErrorMessage path="/"/>}
+                    <ErrorMessage path='/'/>}
 
-                    <SingleItem path="/:id" />
+                    <SingleItem path='/:id' />
 
                 </Router>
                 </div>
@@ -63,7 +63,7 @@ class SearchPage extends Component {
             loading: true,
             start: false,
             upper: !upper,
-            input: "image"
+            input: 'image'
         })
         navigate(`/search`)
     }

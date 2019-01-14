@@ -6,7 +6,7 @@ export const getItems = async input => {
   return data
 }
 
-export const assetData = async nasa_id => {
-  const { data } = await axios.get(`${API_URL}/asset/${nasa_id}`)
+export const assetData = async nasaId => {
+  const { data } = await axios.get(`${API_URL}/asset/${nasaId}`)
   return data
 }
