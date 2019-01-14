@@ -39,6 +39,7 @@ If successful, your browser should open [http://localhost:3000](http://localhost
 * [Jest](https://jestjs.io/) - A JavaScript unit testing framework
 * [Enzyme](https://airbnb.io/enzyme/docs/api/) - JavaScript Testing utility for React 
 * [MomentJS](https://momentjs.com/) - Parse, validate, manipulate, and display dates and times in JavaScript.
+* [@Reach/Router](https://reach.tech/router) - Next Generation Routing for React
 
 ## Author
 
