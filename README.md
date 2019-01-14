@@ -12,7 +12,7 @@ These instructions will help you to get a copy of this project up and running on
 
 Please ensure you have [Node.js](https://nodejs.org/en/download/) installed.
 
-Duplicate or fork this repository from [Github](https://github.com/NickBansal/MarsRover).
+Duplicate or fork this repository from [https://github.com/NickBansal/MarsRover](https://github.com/NickBansal/MarsRover).
 
 Inside this new directory, install the required NPM packages:
 
