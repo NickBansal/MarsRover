@@ -5,15 +5,15 @@ const MediaSelectForm = ({ handleClick }) => {
     <form onClick={(e) => handleClick(e.target.value)}>
       <div className='RadioSelect'>
         <input id='image' type='radio' name='gender' value='image' defaultChecked />
-        <label for='image'>Image</label>
+        <label htmlFor='image'>Image</label>
       </div>
       <div className='RadioSelect'>
         <input id='video' type='radio' name='gender' value='video' />
-        <label for='video'>Video</label>
+        <label htmlFor='video'>Video</label>
       </div>
       <div className='RadioSelect'>
         <input id='audio' type='radio' name='gender' value='audio' />
-        <label for='audio'>Audio</label>
+        <label htmlFor='audio'>Audio</label>
       </div>
     </form>
   )

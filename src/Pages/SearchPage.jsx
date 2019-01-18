@@ -78,7 +78,7 @@ class SearchPage extends Component {
         if (prevState.searchTerm !== this.state.searchTerm) {
             api.getItems(this.state.searchTerm)
             .then(items => {
-                const allItems = items.collection.items.filter(data => data.links)
+                const allItems = items.filter(data => data.links)
                 this.setState({
                     allItems,
                     loading: false
