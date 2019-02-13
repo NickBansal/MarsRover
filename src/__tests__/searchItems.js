@@ -48,6 +48,6 @@ describe("<SearchItems />", () => {
 
   it("Should render allItems if items are available", () => {
     wrapper.setProps({ allItems: testData.collection.items, input: "video" });
-    expect(wrapper.find("SingleThumbnail").exists()).toBe(false);
+    expect(wrapper.find("SingleThumbnail").exists()).toBe(true);
   });
 });
