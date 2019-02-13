@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SearchPage /> Component matches the snapshot 1`] = `
+exports[`<SearchItems /> Should match the page with a snapshot 1`] = `
 <div>
   <div
     className="Results"
   >
     <MediaSelectForm
-      handleClick={[Function]}
+      handleClick={[MockFunction]}
     />
     <p>
       Results: 

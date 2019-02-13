@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LandingPage /> Component matches the snapshot 1`] = `
+exports[`<LandingPage /> Should match the page with a snapshot 1`] = `
 <div
   className="LandingPage"
 >

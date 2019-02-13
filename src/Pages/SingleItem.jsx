@@ -77,9 +77,9 @@ class SingleItem extends Component {
     Promise.all([getItems, getAssets])
       .then(data => {
         this.setState({
-          itemData: data[0],
+          itemData: data[0].collection.items,
           loading: false,
-          assets: data[1]
+          assets: data[1].collection.items
         });
       })
       .catch(error => {

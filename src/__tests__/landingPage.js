@@ -5,11 +5,8 @@ import { shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 
 describe("<LandingPage />", () => {
-  let wrapper;
-  beforeEach(() => {
-    wrapper = shallow(<LandingPage />);
-  });
-  it("Component matches the snapshot", () => {
+  it("Should match the page with a snapshot", () => {
+    const wrapper = shallow(<LandingPage />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

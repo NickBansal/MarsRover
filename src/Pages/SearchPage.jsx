@@ -38,7 +38,6 @@ class SearchPage extends Component {
                 path="/"
                 handleClick={this.handleClick}
                 input={input}
-                start={start}
                 allItems={allItems}
               />
             )}
@@ -79,7 +78,7 @@ class SearchPage extends Component {
       api
         .getItems(this.state.searchTerm)
         .then(items => {
-          const allItems = items.filter(data => data.links);
+          const allItems = items.collection.items.filter(data => data.links);
           this.setState({
             allItems,
             loading: false
